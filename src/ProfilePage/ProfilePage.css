@@ -1,0 +1,20 @@
+.user-reviews-main {
+    width: 50%;
+  }
+  
+  .user-reviews {
+    list-style-type: none;
+    border: 1px grey solid;
+    float: left;
+  }
+  
+  .account-info {
+    display:inline-block;
+    width: 49%;
+    float: right;
+  }
+  
+  .edit-user-info {
+    display: block;
+    margin: auto;
+  }
