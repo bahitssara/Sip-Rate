@@ -8,22 +8,42 @@ import SearchPage from '../SearchPage/SearchPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import AddReview from '../AddReviewPage/AddReview';
 import EditReview from '../EditReview/EditReview';
+import SipRateContext from '../SipRateContext'
+import dummyStore from '../dummydata';
 
-function App() {
-  return (
-    <div className='App'>
-      <main className='App'>
-        <Route path='/' component={Header} />
-        <Route path='/' exact component={HomePage} />
-        <Route path='/signup' component={SignUpForm} />
-        <Route path='/signin' exact component={LoginForm} />
-        <Route path='/searchpage' exact component={SearchPage} />
-        <Route path='/profilepage' component={ProfilePage} />
-        <Route path='/addreview' component={AddReview} />
-        <Route path='/editreview' component={EditReview} />
-      </main>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    users: [],
+    beverages: [],
+    reviews: []
+  };
+
+  componentDidMount() {
+    this.setState(dummyStore);
+  }
+  render(){
+    const contextValue = {
+      users: this.state.users,
+      beverages: this.state.beverages,
+      reviews: this.state.reviews
+    }
+    return (
+      <SipRateContext.Provider value={contextValue}>
+        <div className='App'>
+          <main className='App'>
+            <Route path='/' component={Header} />
+            <Route path='/' exact component={HomePage} />
+            <Route path='/signup' component={SignUpForm} />
+            <Route path='/signin' exact component={LoginForm} />
+            <Route path='/searchpage' exact component={SearchPage} />
+            <Route path='/profilepage' component={ProfilePage} />
+            <Route path='/addreview' component={AddReview} />
+            <Route path='/editreview' component={EditReview} />
+          </main>
+        </div>
+      </SipRateContext.Provider>
+    );
+  }
 }
 
 export default App;
