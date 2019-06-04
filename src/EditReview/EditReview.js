@@ -14,14 +14,13 @@ class EditReview extends React.Component{
                             <legend>Edit Review</legend>
                             <h5>Beverage Name</h5>
                             <label>Change your mind?</label>
-                            <textarea type='text' name='review' id='edit-review' value='edit review'>Write your thoughts here! 
-                            </textarea>
+                            <textarea type='text' name='review' id='edit-review' defaultValue='Write your thoughts here!'/>
                             <span>&#9733;</span>
                             <span>&#9733;</span>
                             <span>&#9733;</span>
                             <span>&#9733;</span>
                             <span>&#9733;</span>
-                            <button className='edit-review-button' value='edit-review'>Submit Review</button>
+                            <button className='edit-review-button' /*value='edit-review'*/>Submit Review</button>
                         </fieldset>
                     </form>
                 </div>
