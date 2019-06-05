@@ -1,28 +1,28 @@
 import React from 'react';
 import './ProfilePage.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import SipRateContext from '../SipRateContext'
 
 class ProfilePage extends React.Component {
+    static contextType = SipRateContext;
     render() {
+        const { reviews=[], users=[], beverages=[] } = this.context;
         return(
             <section className="profile-page">
                 <div className="user-reviews-main">
                     <h2>Posted Reviews:</h2>
-                        <ul className="user-reviews-list">
-                            <li className="user-reviews">
-                            <h4>Example Review Title</h4>
-                            <p>Example review description!! ******</p>
-                            <button className="edit-review">Edit</button>
-                            <button className="delete-review">Delete</button>
-                            </li>
-
-                            <li className="user-reviews">
-                            <h4>Example Review Title</h4>
-                            <p>Example review description!! ******</p>
-                            <button className="edit-review">Edit</button>
-                            <button className="delete-review">Delete</button>
-                            </li>
-                        </ul>
+                    <ul className="user-reviews-list">
+                    {reviews.map(review => 
+                         <li key={review.id} className="user-reviews">
+                         <h4>{review.bev_name}</h4>
+                         <p>{review.user_review}</p>
+                         <Link to='/editreview'>
+                         <button className="edit-review">Edit</button>
+                         </Link>
+                         <button className="delete-review">Delete</button>
+                         </li>                       
+                    )}
+                    </ul>
                 </div>
 
                 <div className="account-info">

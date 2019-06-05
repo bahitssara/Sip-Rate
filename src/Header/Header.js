@@ -7,7 +7,7 @@ export default function Header() {
     <div className='header'>
         <nav role="navigation">
             <Link to='/' className='title'>Sip and Rate</Link>
-            <Link to='/signin' className='sign-in'>Sign-In/Out</Link>
+            <Link to='/profilepage' className='sign-in'>Profile</Link>
         </nav>
             <header role="banner">
                 <h1>Sip and Rate</h1>

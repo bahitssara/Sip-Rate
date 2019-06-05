@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
+import config from '../config'
 import HomePage from '../HomePage/HomePage'
 import Header from '../Header/Header';
 import SignUpForm from '../SignUpForm/SignUpForm';
@@ -21,11 +22,28 @@ class App extends React.Component {
   componentDidMount() {
     this.setState(dummyStore);
   }
+
+  handleDeleteReview = reviewId => {
+    this.setState({
+      reviews: this.state.reviews.filter(review => review.id !== reviewId)
+    })
+  }
+
+  handleEditReview = review => {
+    this.setState({
+      reviews:
+      [...this.state.reviews, review]
+    })
+  }
+
+
   render(){
     const contextValue = {
       users: this.state.users,
       beverages: this.state.beverages,
-      reviews: this.state.reviews
+      reviews: this.state.reviews,
+      deleteReview: this.handleDeleteReview,
+      editreview: this.handleEditReview,
     }
     return (
       <SipRateContext.Provider value={contextValue}>
