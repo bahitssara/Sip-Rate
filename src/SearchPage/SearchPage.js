@@ -2,12 +2,13 @@ import React from 'react';
 import './SearchPage.css';
 import SipRateContext from '../SipRateContext';
 import { Link } from 'react-router-dom';
+import StarRating from '../StarRating/StarRating'
 
 class SearchPage extends React.Component {
     static contextType = SipRateContext;
     render(){
         const { beverages=[] } = this.context;
-  
+        console.log(this.context.beverages)
         return(
             <section className="search-page">
                 <h3>Search here, or manually add a beverage to review</h3>
@@ -29,6 +30,7 @@ class SearchPage extends React.Component {
                                 </Link> 
                                 <p>{beverage.type}</p>
                                 <p>{beverage.description}</p>
+                                <StarRating value={beverage.overall_rating}/>
                             </li>
                         )}
                     </ul>
@@ -39,3 +41,4 @@ class SearchPage extends React.Component {
 }
 
 export default SearchPage;
+

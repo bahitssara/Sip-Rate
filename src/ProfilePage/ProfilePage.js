@@ -2,11 +2,12 @@ import React from 'react';
 import './ProfilePage.css';
 import { Link } from 'react-router-dom';
 import SipRateContext from '../SipRateContext'
+import StarRating from '../StarRating/StarRating'
 
 class ProfilePage extends React.Component {
     static contextType = SipRateContext;
     render() {
-        const { reviews=[], users=[], beverages=[] } = this.context;
+        const { reviews=[] } = this.context;
         return(
             <section className="profile-page">
                 <div className="user-reviews-main">
@@ -16,6 +17,7 @@ class ProfilePage extends React.Component {
                          <li key={review.id} className="user-reviews">
                          <h4>{review.bev_name}</h4>
                          <p>{review.user_review}</p>
+                         <StarRating value={review.rating} />
                          <Link to='/editreview'>
                          <button className="edit-review">Edit</button>
                          </Link>

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import config from '../config'
 import HomePage from '../HomePage/HomePage'
 import Header from '../Header/Header';
 import SignUpForm from '../SignUpForm/SignUpForm';

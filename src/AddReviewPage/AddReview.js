@@ -26,11 +26,16 @@ class AddReview extends React.Component{
                             <input type='text' name='beverage' id='beverage-input' /*value='beverage name'*/ />
                             <label>How did you like it?</label>
                             <textarea type='text' name='email' id='email-input' /*value='Write your thoughts here!'*/ /> 
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
+                            <label htmlFor='rating'>Rating{' '}</label>
+                                <input
+                                type='number'
+                                name='rating'
+                                id='rating'
+                                defaultValue='1'
+                                min='1'
+                                max='5'
+                                required
+                                />  
                             <button className='add-review-button' /*value='add-review'*/>Submit Review</button>
                         </fieldset>
                         </form>
