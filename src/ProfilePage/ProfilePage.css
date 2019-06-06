@@ -1,5 +1,6 @@
 .user-reviews-main {
     width: 50%;
+    max-width: 400px;
   }
   
   .user-reviews {
