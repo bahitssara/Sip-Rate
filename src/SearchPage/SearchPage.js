@@ -8,7 +8,6 @@ class SearchPage extends React.Component {
     static contextType = SipRateContext;
     render(){
         const { beverages=[] } = this.context;
-        console.log(this.context.beverages)
         return(
             <section className="search-page">
                 <h3>Search here, or manually add a beverage to review</h3>
@@ -24,7 +23,7 @@ class SearchPage extends React.Component {
                 <div className="search-results">
                     <ul className='results-li'>
                         {beverages.map(beverage =>
-                            <li key={beverage.id}>
+                            <li className='search-li-item' key={beverage.id}>
                                 <Link to='/addreview'>
                                     {beverage.bev_name}
                                 </Link> 

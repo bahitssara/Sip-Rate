@@ -35,6 +35,13 @@ class App extends React.Component {
     })
   }
 
+  handleAddReview = review => {
+    this.setState({
+      reviews:
+      [...this.state.reviews, review]
+    })
+  }
+
 
   render(){
     const contextValue = {
@@ -43,6 +50,7 @@ class App extends React.Component {
       reviews: this.state.reviews,
       deleteReview: this.handleDeleteReview,
       editreview: this.handleEditReview,
+      addReview: this.handleAddReview
     }
     return (
       <SipRateContext.Provider value={contextValue}>

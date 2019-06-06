@@ -5,6 +5,8 @@ import SipRateContext from '../SipRateContext'
 import StarRating from '../StarRating/StarRating'
 
 class ProfilePage extends React.Component {
+
+    onEdit
     static contextType = SipRateContext;
     render() {
         const { reviews=[] } = this.context;
@@ -17,8 +19,9 @@ class ProfilePage extends React.Component {
                          <li key={review.id} className="user-reviews">
                          <h4>{review.bev_name}</h4>
                          <p>{review.user_review}</p>
+                         <p>Posted: {review.date_modified}</p>
                          <StarRating value={review.rating} />
-                         <Link to='/editreview'>
+                         <Link to={`/editreview`}>
                          <button className="edit-review">Edit</button>
                          </Link>
                          <button className="delete-review">Delete</button>

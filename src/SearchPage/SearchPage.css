@@ -4,4 +4,10 @@
 
 .results-li {
   list-style-type: none;
+  padding-left: 0;
+
+}
+
+.search-li-item {
+  border: 1px grey solid;
 }

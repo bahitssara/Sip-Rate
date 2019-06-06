@@ -64,6 +64,7 @@ export default {
             'bev_name':'Pinot Grigio',
             'user_review':'This wine was delicious! Would have it again',
             'rating':'5',
+            'date_modified': '6/5/2019',
             'bev_id': '1',
             'user_id': '1'
         },
@@ -73,6 +74,7 @@ export default {
             'bev_name':'Coors Light',
             'user_review':'This beer was not good! Would not have it again',
             'rating':'1',
+            'date_modified': '6/5/2019',
             'bev_id': '2',
             'user_id': '2'
         },
@@ -82,6 +84,7 @@ export default {
             'bev_name':'Cabernet Sauvignon',
             'user_review':'This wine was wonderful! Would have it again',
             'rating':'4',
+            'date_modified': '6/5/2019',
             'bev_id': '3',
             'user_id': '3'
         },
@@ -91,6 +94,7 @@ export default {
             'bev_name':'Milk Stout',
             'user_review':'This beer was very good! Would have it again',
             'rating':'3',
+            'date_modified': '6/5/2019',
             'bev_id': '4',
             'user_id': '4'
         }
