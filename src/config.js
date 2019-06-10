@@ -1,4 +1,3 @@
 export default {
-    API_ENDPOINT: process.env.API_ENDPOINT,
-    API_KEY: process.env.API_KEY
+    API_ENDPOINT: 'https://gentle-ridge-33254.herokuapp.com/',
 }
