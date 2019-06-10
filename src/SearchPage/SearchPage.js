@@ -3,8 +3,30 @@ import './SearchPage.css';
 import SipRateContext from '../SipRateContext';
 import { Link } from 'react-router-dom';
 import StarRating from '../StarRating/StarRating'
+import config from '../config'
 
 class SearchPage extends React.Component {
+    componentDidMount() {
+        fetch(config.API_ENDPOINT + `/beverages`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+        .then(res => {
+            if(!res.ok)
+                return res.json().then(error =>
+                    Promise.reject(error));
+        })
+        .then(([beverages]) => {
+            this.setState({
+                beverages
+            })
+        })
+        .catch(error => {
+            console.error({error})
+        })
+    }
     static contextType = SipRateContext;
     render(){
         const { beverages=[] } = this.context;
