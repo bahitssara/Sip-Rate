@@ -2,18 +2,20 @@ import React from 'react';
 import './AddReview.css';
 import SipRateContext from '../SipRateContext';
 import ValidationError from '../ValidationError/ValidationError'
+import config from '../config'
 
 class AddReview extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            bev_id: '',
+            id: '',
             bev_name: '',
             bev_type: '',
-            id: '',
-            rating: '',
-            user_id: '',
             user_review: '',
+            rating: '',
+            bev_id: '',
+            user_id: '',
+            date_added: new Date(),
             bev_nameValid: false,
             bev_typeValid: false,
             ratingValid: false,
@@ -49,10 +51,38 @@ class AddReview extends React.Component{
 
     handleReviewSubmit = e => {
         e.preventDefault();
-        // const newReview = {bev_id, bev_name, bev_type, id, rating, user_id, user_review} = this.state;
-        console.log('note sumbitted')
-        // this.context.addReview(newReview)
-        this.props.history.push('/profilepage')
+        const newReview = (({bev_id, bev_name, bev_type, id, rating, user_id, user_review}) => ({bev_id, bev_name, bev_type, id, rating, user_id, user_review}))(this.state);
+
+        fetch(config.API_ENDPOINT + `/reviews`,{
+            method: 'POST',
+            body:JSON.stringify(newReview),
+            headers: {
+                'content-type': 'application/json'
+            },
+        })
+            .then(res => {
+                if(!res.ok){
+                    throw new Error('Something went wrong please try again later');
+                 }
+                  return res.json();
+            })
+            .then(() => {
+                this.setState({
+                    id: '',
+                    bev_name: '',
+                    bev_type: '',
+                    user_review: '',
+                    rating: '',
+                    bev_id: '',
+                    user_id: '',
+                    date_added: new Date()
+                });
+                this.context.AddReview(newReview);
+                this.props.history.push('/profilepage')
+            })
+            .catch(error => {
+                console.error({error})
+            })        
 
     }
 
@@ -123,11 +153,10 @@ class AddReview extends React.Component{
                                 id='note-folder-input'
                                 >
                                 <option value=''>Choose type:</option>
-                                {this.context.beverages.map(bev =>
                                     <option 
-                                        key={bev.bev_id} 
-                                        value={bev.id}>{bev.bev_type}</option>
-                                    )}
+                                        value='wine'>wine</option>
+                                    <option 
+                                        value='beer'>beer</option>
                                 </select>
                             </div>
                             <div className='field'>

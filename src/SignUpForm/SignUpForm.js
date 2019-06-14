@@ -1,15 +1,36 @@
 import React from 'react';
 import './SignUpForm.css';
 import SipRateContext from '../SipRateContext'
+import AuthApiService from '../services/auth-api-service'
 
 
 
 class SignUpForm extends React.Component {
     static contextType = SipRateContext;
     
-    handleCreateAccount = e => {
-        this.props.history.push('/searchpage')
-    }
+    handleCreateAccount = ev => {
+        ev.preventDefault()
+        const { first_name, last_name, email, password, user_name } = ev.target
+        this.setState({ error: null })
+            AuthApiService.postUser({
+                first_name: first_name.value,
+                last_name: first_name.value,
+                email: email.value,
+                password: password.value,
+                user_name: user_name.value,
+            })
+            .then(user => {
+                first_name.value = ''
+                last_name.value = ''
+                email.value = ''
+                password.value = ''
+                user_name.value = ''
+                this.props.history.push('/searchpage')
+            })
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
+            }
 
     render() {
         return(

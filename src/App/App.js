@@ -9,7 +9,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import AddReview from '../AddReviewPage/AddReview';
 import EditReview from '../EditReview/EditReview';
 import SipRateContext from '../SipRateContext'
-import config from '../config'
+// import config from '../config'
 
 class App extends React.Component {
   state = {
@@ -18,46 +18,47 @@ class App extends React.Component {
     reviews: []
   };
 
-  componentDidMount() {
-    Promise.all([
-      fetch(config.API_ENDPOINT + '/beverages', {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json'
-        }
-      }),
-      fetch(config.API_ENDPOINT + '/reviews', {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json'
-        }
-      })
-    ])
-      .then(([bevRes, reviewRes]) => {
-        if(!bevRes.ok)
-          return bevRes.json().then(e => Promise.reject(e))
-        if(!reviewRes.ok) 
-          return reviewRes.json().then(e => Promise.reject(e))
+  // componentDidMount() {
+  //   Promise.all([
+  //     fetch(config.API_ENDPOINT + '/beverages', {
+  //       method: 'GET',
+  //       headers: {
+  //         'Authorization':'bearer'
+  //         'content-type': 'application/json'
+  //       }
+  //     }),
+  //     fetch(config.API_ENDPOINT + '/reviews', {
+  //       method: 'GET',
+  //       headers: {
+  //         'content-type': 'application/json'
+  //       }
+  //     })
+  //   ])
+  //     .then(([bevRes, reviewRes]) => {
+  //       if(!bevRes.ok)
+  //         return bevRes.json().then(e => Promise.reject(e))
+  //       if(!reviewRes.ok) 
+  //         return reviewRes.json().then(e => Promise.reject(e))
 
-        return Promise.all([
-          bevRes.json(),
-          reviewRes.json(),
-        ])
-      })
-      .then(([beverages, reviews]) => {
-        this.setState({
-          beverages,
-        })
-        this.setState({
-          reviews,
-        })
-        console.log(beverages, reviews)
-      })
+  //       return Promise.all([
+  //         bevRes.json(),
+  //         reviewRes.json(),
+  //       ])
+  //     })
+  //     .then(([beverages, reviews]) => {
+  //       this.setState({
+  //         beverages,
+  //       })
+  //       this.setState({
+  //         reviews,
+  //       })
+  //       console.log(beverages, reviews)
+  //     })
       
-      .catch(error => {
-        console.error({error})
-      })
-    }
+  //     .catch(error => {
+  //       console.error({error})
+  //     })
+  //   }
 
   handleDeleteReview = reviewId => {
     this.setState({
@@ -100,7 +101,7 @@ class App extends React.Component {
             <Route path='/searchpage' exact component={SearchPage} />
             <Route path='/profilepage' component={ProfilePage} />
             <Route path='/addreview' component={AddReview} />
-            <Route path='/editreview' component={EditReview} />
+            <Route path='/editreview/:reviewId' component={EditReview} />
           </main>
         </div>
       </SipRateContext.Provider>
