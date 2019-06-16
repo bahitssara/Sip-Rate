@@ -37,6 +37,12 @@ class App extends React.Component {
     })
   }
 
+  handleBevSearch = (beverages) => {
+    this.setState({
+      beverages: beverages
+    })
+  };
+
 
   render(){
     const contextValue = {
