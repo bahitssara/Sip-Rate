@@ -33,7 +33,6 @@ class AddReview extends React.Component{
     static contextType = SipRateContext;
 
     componentDidMount() {
-        console.log(this.props.match.params)
         const { id } = this.props.match.params
         fetch(config.API_ENDPOINT + `/beverages/${id}`, {
             method: 'GET',
