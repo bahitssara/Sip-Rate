@@ -13,28 +13,25 @@ class SignUpForm extends React.Component {
             last_name: '',
             email: '',
             password: '',
-            user_name: ''
         }
     }
     static contextType = SipRateContext;
     
     handleCreateAccount = ev => {
         ev.preventDefault()
-         const { first_name, last_name, email, password, user_name } = ev.target
+        const { first_name, last_name, email, password } = ev.target
         this.setState({ error: null })
             AuthApiService.postUser({
                 first_name: first_name.value,
                 last_name: first_name.value,
                 email: email.value,
                 password: password.value,
-                user_name: user_name.value,
             })
             .then(user => {
                 first_name.value = ''
                 last_name.value = ''
                 email.value = ''
                 password.value = ''
-                user_name.value = ''
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -53,21 +50,15 @@ class SignUpForm extends React.Component {
                             <label>First Name</label>
                             <input 
                                 type='text'
-                                name='first-name'
+                                name='first_name'
                                 id='first-name-input'
                             />
                             <label>Last Name</label>
                             <input 
                                 type='text'
-                                name='last-name'
+                                name='last_name'
                                 id='last-name-input'
                             />
-                            <label>Username</label>
-                            <input 
-                                type='text' 
-                                name='username' 
-                                id='username-input' 
-                                /*value='username'*/ />
                             <label>Email</label>
                             <input 
                                 type='text' 
