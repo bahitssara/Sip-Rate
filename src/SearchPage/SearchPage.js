@@ -29,6 +29,7 @@ class SearchPage extends React.Component {
     }
     static contextType = SipRateContext;
     render(){
+        console.log(this.context)
         const { beverages=[] } = this.context;
         return(
             <section className="search-page">

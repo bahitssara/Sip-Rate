@@ -27,10 +27,6 @@ class Header extends React.Component {
               to='/signup'className='sign-in'>
               Register
             </Link>
-            <Link
-              to='/'className='sign-in'>
-              Log in/
-            </Link>
           </div>
         )
     }

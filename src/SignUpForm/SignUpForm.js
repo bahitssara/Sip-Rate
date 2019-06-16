@@ -6,11 +6,21 @@ import AuthApiService from '../services/auth-api-service'
 
 
 class SignUpForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: '',
+            user_name: ''
+        }
+    }
     static contextType = SipRateContext;
     
     handleCreateAccount = ev => {
         ev.preventDefault()
-        const { first_name, last_name, email, password, user_name } = ev.target
+         const { first_name, last_name, email, password, user_name } = ev.target
         this.setState({ error: null })
             AuthApiService.postUser({
                 first_name: first_name.value,
@@ -25,7 +35,6 @@ class SignUpForm extends React.Component {
                 email.value = ''
                 password.value = ''
                 user_name.value = ''
-                this.props.history.push('/searchpage')
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -38,7 +47,7 @@ class SignUpForm extends React.Component {
                 <div className='sign-up-description'>
                     <h3>Sign up to get started rating your favorite wine and beer!</h3>
                 </div>
-                <form className='sign-up-main' onSubmit={e => this.handleCreateAccount(e)}>
+                <form className='sign-up-main' onSubmit={this.handleCreateAccount}>
                     <fieldset>
                         <legend>Sign Up</legend>
                             <label>First Name</label>

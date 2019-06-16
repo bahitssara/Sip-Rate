@@ -9,7 +9,8 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import AddReview from '../AddReviewPage/AddReview';
 import EditReview from '../EditReview/EditReview';
 import SipRateContext from '../SipRateContext'
-// import config from '../config'
+import config from '../config'
+import TokenService from '../services/token-service';
 
 class App extends React.Component {
   state = {
@@ -18,47 +19,46 @@ class App extends React.Component {
     reviews: []
   };
 
-  // componentDidMount() {
-  //   Promise.all([
-  //     fetch(config.API_ENDPOINT + '/beverages', {
-  //       method: 'GET',
-  //       headers: {
-  //         'Authorization':'bearer'
-  //         'content-type': 'application/json'
-  //       }
-  //     }),
-  //     fetch(config.API_ENDPOINT + '/reviews', {
-  //       method: 'GET',
-  //       headers: {
-  //         'content-type': 'application/json'
-  //       }
-  //     })
-  //   ])
-  //     .then(([bevRes, reviewRes]) => {
-  //       if(!bevRes.ok)
-  //         return bevRes.json().then(e => Promise.reject(e))
-  //       if(!reviewRes.ok) 
-  //         return reviewRes.json().then(e => Promise.reject(e))
+  componentDidMount() {
+    Promise.all([
+      fetch(config.API_ENDPOINT + '/beverages', {
+        method: 'GET',
+        headers: {
+          'authorization':`bearer ${TokenService.getAuthToken()}`,
+        }
+      }),
+      fetch(config.API_ENDPOINT + '/reviews', {
+        method: 'GET',
+        headers: {
+          'authorization':`bearer ${TokenService.getAuthToken()}`,
+        }
+      })
+    ])
+      .then(([bevRes, reviewRes]) => {
+        if(!bevRes.ok)
+          return bevRes.json().then(e => Promise.reject(e))
+        if(!reviewRes.ok) 
+          return reviewRes.json().then(e => Promise.reject(e))
 
-  //       return Promise.all([
-  //         bevRes.json(),
-  //         reviewRes.json(),
-  //       ])
-  //     })
-  //     .then(([beverages, reviews]) => {
-  //       this.setState({
-  //         beverages,
-  //       })
-  //       this.setState({
-  //         reviews,
-  //       })
-  //       console.log(beverages, reviews)
-  //     })
+        return Promise.all([
+          bevRes.json(),
+          reviewRes.json(),
+        ])
+      })
+      .then(([beverages, reviews]) => {
+        this.setState({
+          beverages,
+        })
+        this.setState({
+          reviews,
+        })
+        console.log(beverages, reviews)
+      })
       
-  //     .catch(error => {
-  //       console.error({error})
-  //     })
-  //   }
+      .catch(error => {
+        console.error({error})
+      })
+    }
 
   handleDeleteReview = reviewId => {
     this.setState({
@@ -66,10 +66,10 @@ class App extends React.Component {
     })
   }
 
-  handleEditReview = review => {
+  handleEditReview = reviewId => {
     this.setState({
       reviews:
-      [...this.state.reviews, review]
+      [...this.state.reviews, reviewId]
     }) 
   }
 
