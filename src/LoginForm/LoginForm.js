@@ -1,15 +1,19 @@
 import React from 'react';
 import './LoginForm.css';
-import SipRateContext from '../SipRateContext';
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 
 
 class LoginForm extends React.Component {
-    static contextType = SipRateContext;
+    static defaultProps = {
+        onLoginSuccess: () => {}
+    };
 
-    handleLogin = ev => {
+    state = { error: null };
+
+    handleSubmitJwtAuth = ev => {
         ev.preventDefault();
+        this.setState({ error: null});
         const { email, password } = ev.target
            AuthApiService.postLogin({
              email: email.value,
@@ -19,7 +23,7 @@ class LoginForm extends React.Component {
                email.value = ''
                password.value = ''
                TokenService.saveAuthToken(res.authToken)
-               this.props.history.push('/profilepage') 
+               window.location = '/searchpage';
             })
              .catch(res => {
                this.setState({ error: res.error })
@@ -28,7 +32,7 @@ class LoginForm extends React.Component {
     render(){
         return(
             <div className="login-form">
-                <form className="sign-in-main" onSubmit={this.handleLogin}>
+                <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
                     <fieldset>
                         <legend>Sign In</legend>
                             <label htmlFor='email'>Email</label>

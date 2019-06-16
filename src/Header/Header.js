@@ -22,7 +22,7 @@ class Header extends React.Component {
 
     renderLoginLink() {
         return (
-            <div className='Header-logged-out'>
+            <div className='header-logged-out'>
             <Link
               to='/signup'className='sign-in'>
               Register

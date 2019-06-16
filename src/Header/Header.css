@@ -12,7 +12,7 @@ nav {
   z-index: 10;
 }
 
-.sign-in, .home {
+.header-logged-in, .header-logged-out {
   float: right;
 }
 

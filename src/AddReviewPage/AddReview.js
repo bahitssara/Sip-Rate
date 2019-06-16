@@ -13,8 +13,8 @@ class AddReview extends React.Component{
             bev_type: '',
             user_review: '',
             rating: '',
-            bev_id: '',
             user_id: '',
+            bev_code: '',
             date_added: new Date(),
             bev_nameValid: false,
             bev_typeValid: false,
@@ -31,6 +31,31 @@ class AddReview extends React.Component{
     }
 
     static contextType = SipRateContext;
+
+    componentDidMount() {
+        console.log(this.props.match.params)
+        const { id } = this.props.match.params
+        fetch(config.API_ENDPOINT + `/beverages/${id}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+        .then(res => {
+            if(!res.ok)
+                return res.json().then(error =>
+                    Promise.reject(error));
+        })
+        .then(responseData => {
+            this.setState({
+                id: responseData.id,
+                bev_name: responseData.bev_name, 
+            })
+        })
+        .catch(error => {
+            console.error({error})
+        })
+    }
 
     addBevName(bev_name) {
         this.setState({bev_name}, () => {this.validateBevName(bev_name)})
@@ -150,7 +175,7 @@ class AddReview extends React.Component{
                                 <label>Beverage Type</label>
                                 <select 
                                 type='select'
-                                id='note-folder-input'
+                                id='beverage-input'
                                 >
                                 <option value=''>Choose type:</option>
                                     <option 
@@ -185,16 +210,17 @@ class AddReview extends React.Component{
                             </div> 
                             <div className='field'>
                                 <label htmlFor='rating'>Rating{' '}</label>
-                                    <input
-                                    type='number'
-                                    name='rating'
-                                    id='rating'
-                                    value={this.state.rating}
-                                    onChange={e => this.addRating(e.target.value)}
-                                    min='1'
-                                    max='5'
-                                    required
-                                />
+                                <select 
+                                    type='select'
+                                    id='note-folder-input'
+                                >
+                                <option value={this.state.rating}>Choose rating:</option>
+                                    <option value='1' >1</option>
+                                    <option value='2' >2</option>
+                                    <option value='3' >3</option>
+                                    <option value='4' >4</option>
+                                    <option value='5' >5</option>
+                                </select>
                             </div>  
                             <button className='add-review-button'>Submit Review</button>
                         </fieldset>
