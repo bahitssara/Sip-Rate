@@ -1,48 +1,44 @@
 * {
     box-sizing: border-box;
+    color: white;
   }
   
   body {
-    font-family: "Open Sans",
-    sans-serif; 
     font-size: 20px;
     text-align: center;
     line-height: 1.5;
-  }
-  
-  nav,
-  footer {
-    padding: 1% 0;
-    background-color: #aaa;
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
-  
-  .sign-in, .home {
-    float: right;
-  }
-  
-  .title {
-    float: left;
-  }
-  
-  header {
-    padding: 12% 0;
+    background: url(./background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Questrial', sans-serif;
   }
   
   section {
-    min-height: 600px;
     padding: 6% 0;
   }
-  
-  .description {
-    width: 50%;
-    float: left;
+
+  .header-logged-in-profile {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 20px;
+    width: 100%;
   }
+
+  .header-logged-in-profile a:hover {
+    font-size: 45px;
+    color: #570515;
+  }
+
+  .logged-in-search {
+    font-size: 30px;
+    text-shadow: 1px 1px #570515;
+  }
+
+  .fa-wine-glass-alt{
+    color: #570515;
+  }
+
+
   

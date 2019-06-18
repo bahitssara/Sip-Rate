@@ -43,7 +43,7 @@ class SearchBar extends React.Component {
     render() {
         return(
             <form className='search-input-form' onSubmit={this.handleSearch}>
-                        <label>Start searching!</label>
+                        {/* <label className='search-label'>Start searching!</label> */}
                             <input type='text' name='searchbar' id='search-input' onChange={(e) => this.onChange(e)} />
                         <button className='search-button' >Search</button>
             </form>

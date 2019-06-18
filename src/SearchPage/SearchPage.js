@@ -7,7 +7,7 @@ class SearchPage extends React.Component {
     render(){
         return(
             <section className="search-page">
-                <h3>Search here, and add your review!</h3>
+                <h3 className='search-page-header'>Search here, and add your review!</h3>
                 <SearchBar />
                 <SearchResults />
             </section>

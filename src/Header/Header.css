@@ -1,7 +1,8 @@
 nav,
 footer {
-  padding: .5% 0;
-  background-color: #aaa;
+  padding: 1.5% 0;
+  background-color: rgba(76,97,61,0.40);
+ 
 }
 
 nav {
@@ -18,8 +19,13 @@ nav {
 
 .title {
   float: left;
+  
 }
 
-header {
-  padding: 4% 0;
+.header h1 {
+  margin-top: 100px;
+  font-size: 4em;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  text-shadow: 1px 2px 3px #570515;
 }

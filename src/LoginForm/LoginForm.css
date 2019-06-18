@@ -5,10 +5,47 @@ label {
   .sign-in-main {
     width: 49%;
     float: right;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  .login-fieldset {
+    border: none;
+    background-color: rgba(87,5,21,0.65);
+    border-radius: 5px;
+  }
+
+  .sign-in-legend {
+    font-size: 2.2em;
+    text-shadow: 1px 3px #570515;
   }
   
   .sign-in-button {
     display: block;
     margin: auto;
+    color: black;
+  }
+
+  .sign-in-main input {
+    width: 15em;
+    height:2.5em;
+    padding-bottom: 20px;   
+  }
+
+  .sign-in-email {
+    font-size: 1.5em;
+    text-shadow: 1px 1px black;
+  }
+
+  .sign-in-password {
+    font-size: 1.5em;
+    text-shadow: 1px 1px black;
   }
   
+  .sign-in-button {
+    margin-top: 10px;
+    border-radius: 4px;
+    height:40px;
+    width: 6em;
+    font-size: 20px;
+  }

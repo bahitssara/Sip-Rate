@@ -1,0 +1,22 @@
+.search-label {
+    font-size: 1.5em;
+    text-shadow: 1px 1px black;
+}
+
+.search-input-form input {
+    width: 24em;
+    height:3.2em;
+    border-radius: 5px;
+    margin-bottom: 20px;   
+}
+
+.search-button {
+    margin-top: 10px;
+    border-radius: 4px;
+    height:35px;
+    width: 4em;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    color:black;
+}

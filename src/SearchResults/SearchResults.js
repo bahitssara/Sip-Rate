@@ -15,18 +15,18 @@ class SearchResults extends React.Component {
                 <h3>Click on your wine choice to add a review</h3>
                 {beverages.map(beverage =>
                     <li className='search-li-item' key={beverage.id}>
-                        <Link to='/addreview'>
+                        <Link to='/addreview' className='beverage-link'>
                             {beverage.bev_name}
                         </Link> 
-                        <p>{beverage.type}</p>
-                        <p>{beverage.description}</p>
+                        <p className='bev_type'>{beverage.bev_type}</p>
+                        <p className='bev_description'>{beverage.description}</p>
                         <StarRating value={beverage.overall_rating}/>
                     </li>
                 )}
             </ul>
         </div>
         )
-    }
+    } 
 }
 
 export default SearchResults

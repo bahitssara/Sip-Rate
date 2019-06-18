@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
         onLoginSuccess: () => {}
     };
 
-    state = { error: null };
+    state = { error: null }; 
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault();
@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
                email.value = ''
                password.value = ''
                TokenService.saveAuthToken(res.authToken)
-               window.location = '/searchpage';
+               window.location = '/';
             })
              .catch(res => {
                this.setState({ error: res.error })
@@ -33,15 +33,15 @@ class LoginForm extends React.Component {
         return(
             <div className="login-form">
                 <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
-                    <fieldset>
-                        <legend>Sign In</legend>
-                            <label htmlFor='email'>Email</label>
+                    <fieldset className='login-fieldset'>
+                        <legend className='sign-in-legend'>Sign In</legend>
+                            <label htmlFor='email' className='sign-in-email'>Email</label>
                                 <input 
                                     type='text' 
                                     name='email' 
                                     id='email-input' 
                                 />
-                            <label htmlFor='password'>Password</label>
+                            <label htmlFor='password' className='sign-in-password'>Password</label>
                                 <input 
                                     type='text' 
                                     name='password' 

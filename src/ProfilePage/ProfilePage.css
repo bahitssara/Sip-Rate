@@ -1,21 +1,37 @@
 .user-reviews-main {
-    width: 50%;
-    max-width: 400px;
+   margin: auto;
   }
+
+.user-reviews-main h2 {
+  font-size: 2.2em;
+  text-shadow: 1px 2px 3px #570515;
+}
   
-  .user-reviews {
-    list-style-type: none;
-    border: 1px grey solid;
-    float: left;
-  }
+.user-reviews {
+  list-style-type: none;
+  border: 1px grey solid;
+  margin: auto;
+}
+
+.user-li-item {
+  border: 1px;
+  border-radius: 3px;
+  margin: 8px;
+  background-color: rgba(87,5,21,0.65);
+  color: white;
+}
+
+.user-li-item h4{
+  font-size: 20px;
+  text-shadow: 1px 2px #570515;
+}
+
+.edit-review-button {
+  color: black;
+}
+
+.delete-review-button {
+  color: black;
+}
   
-  .account-info {
-    display:flex;
-    flex-direction:column;
-    width: 49%;
-  }
   
-  .edit-user-info {
-    display: block;
-    margin: auto;
-  }

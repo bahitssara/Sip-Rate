@@ -119,12 +119,12 @@ class EditReview extends React.Component{
                                 <label>Change your mind?</label>
                                 <textarea 
                                     type='text' 
-                                    name='email' 
-                                    id='email-input' 
+                                    name='user_review' 
+                                    id='user-review' 
                                     value={this.state.user_review}
                                     onChange={e => this.editUserReview(e.target.value)}
                                 />
-                                <ValidationError hasError={!this.state.nameValid} message={this.state.validationMessages.user_review}/>
+                                <ValidationError hasError={!this.state.user_reviewValid} message={this.state.validationMessages.user_review}/>
 
                             </div> 
                             <div className='field'>

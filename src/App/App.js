@@ -8,7 +8,9 @@ import SearchPage from '../SearchPage/SearchPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import AddReview from '../AddReviewPage/AddReview';
 import EditReview from '../EditReview/EditReview';
-import SipRateContext from '../SipRateContext'
+import SipRateContext from '../SipRateContext';
+import config from '../config';
+import TokenService from '../services/token-service';
 
 class App extends React.Component {
   state = {
@@ -16,6 +18,46 @@ class App extends React.Component {
     beverages: [],
     reviews: []
   };
+
+  componentDidMount() {
+    Promise.all([
+      fetch(config.API_ENDPOINT + '/beverages', {
+        method: 'GET',
+        headers: {
+          'authorization':`bearer ${TokenService.getAuthToken()}`,
+        }
+      }),
+      fetch(config.API_ENDPOINT + '/reviews', {
+        method: 'GET',
+        headers: {
+          'authorization':`bearer ${TokenService.getAuthToken()}`,
+        }
+      })
+    ])
+      .then(([bevRes, reviewRes]) => {
+        if(!bevRes.ok)
+          return bevRes.json().then(e => Promise.reject(e))
+        if(!reviewRes.ok) 
+          return reviewRes.json().then(e => Promise.reject(e))
+
+          return Promise.all([
+            bevRes.json(),
+            reviewRes.json(),
+          ])
+        })
+        .then(([beverages, reviews]) => {
+          this.setState({
+            beverages,
+          })
+          this.setState({
+            reviews,
+          })
+        })
+  
+        .catch(error => {
+          console.error({error})
+        })
+      }
 
   handleDeleteReview = reviewId => {
     this.setState({

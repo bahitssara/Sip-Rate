@@ -14,7 +14,7 @@ class AddReview extends React.Component{
             user_review: '',
             rating: '',
             user_id: '',
-            bev_code: '',
+            bev_id: '',
             date_added: new Date(),
             bev_nameValid: false,
             bev_typeValid: false,
@@ -33,8 +33,8 @@ class AddReview extends React.Component{
     static contextType = SipRateContext;
 
     componentDidMount() {
-        const { id } = this.props.match.params
-        fetch(config.API_ENDPOINT + `/beverages/${id}`, {
+        const { bev_id } = this.props.match.params
+        fetch(config.API_ENDPOINT + `/beverages/${bev_id}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +47,7 @@ class AddReview extends React.Component{
         })
         .then(responseData => {
             this.setState({
-                id: responseData.id,
+                bev_id: responseData.bev_id,
                 bev_name: responseData.bev_name, 
             })
         })
