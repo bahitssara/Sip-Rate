@@ -107,7 +107,7 @@ class App extends React.Component {
             <Route path='/signin' exact component={LoginForm} />
             <Route path='/searchpage' exact component={SearchPage} />
             <Route path='/profilepage' component={ProfilePage} />
-            <Route path='/addreview/:clickedBeverage' component={AddReview} />
+            <Route path='/addreview' component={AddReview} />
             <Route path='/editreview/:clickedBeverage' component={EditReview} />
           </main>
         </div>

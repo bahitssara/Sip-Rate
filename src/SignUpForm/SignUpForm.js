@@ -43,6 +43,8 @@ class SignUpForm extends React.Component {
                 last_name.value = ''
                 email.value = ''
                 password.value = ''
+
+                window.location = '/';
             })
             .catch(res => {
                 this.setState({ error: res.error })
