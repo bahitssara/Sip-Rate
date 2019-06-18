@@ -1,43 +1,49 @@
 .sign-up-main {
     width: 75%;
     margin: auto;
-  }
+}
 
-  .sign-up-legend {
-    font-size: 2em;
-  }
+.sign-up-legend {
+  font-size: 2em;
+  text-shadow: 1px 2px #570515;
 
-  .sign-up-fieldset {
-    border: 3px solid black;
-  }
+}
 
-  .sign-up-description {
-    font-size: 1.8em;
-    text-shadow: 1px 1px white;
-  }
-  
-  .sign-up-button {
-    display:block;
-    margin: auto;
-    margin-top: 10px;
-    border-radius: 4px;
-    height:40px;
-    width: 10em;
-    font-size: 15px;
-  }
+.sign-up-fieldset {
+  border: 2px solid #570515;
+  text-shadow: 1px 2px #570515;
+}
 
-  .sign-up-main label {
-    font-size: 1.4em;
-    text-shadow: 1px .5px white;
-  }
+.sign-up-description {
+  font-size: 1.8em;
+  text-shadow: 1px 1px 1px #570515;
+}
 
-  .sign-up-main input {
-    width: 15em;
-    height:2.5em;
-    padding-bottom: 20px;  
-  }
+.sign-up-button {
+  display:block;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 4px;
+  height:40px;
+  width: 10em;
+  font-size: 15px;
+  color: black;
+}
 
-  ul {
-    font-size: .8em;
-    list-style-type: none;
-  }
+.sign-up-main label {
+  font-size: 1.4em;
+  text-shadow: 1px 1px #570515;
+}
+
+.sign-up-main input {
+  width: 15em;
+  height:2.5em;
+  padding-bottom: 20px;  
+  box-shadow: 1px 1px #570515;
+  border-radius: 4px;
+}
+
+ul {
+  font-size: .8em;
+  list-style-type: none;
+}

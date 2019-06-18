@@ -11,29 +11,35 @@ class SearchBar extends React.Component {
         this.handleSearch = this.handleSearch.bind(this)
     }
 
-    onChange = e => {
-        const { value } = e.target;
+    updateState(ev) {
+        ev.preventDefault()
+        const value = this.input.value
+        console.log(value)
         this.setState({
             query: value
-        });
+        })
         this.handleSearch(value)
-    };
+    }
 
     handleSearch(query) {
-        const wineApi = `/beverages-api-data/search=${query}`;
-        fetch(config.API_ENDPOINT + `${wineApi}` ,{
+        console.log(query)
+        const wineApi = `/beverages-api-data/${query}`;
+        const url= config.API_ENDPOINT + `${wineApi}`
+        console.log(url)
+        fetch(url ,{
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
             }
         })
-        .then(res => {
-            if(!res.ok)
-                return res.json().then(error =>
-                    Promise.reject(error));
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+              }
+              throw new Error(response.statusText);
         })
-        .then(data => {
-            console.log(data)
+        .then(responseJson => {
+            console.log(responseJson)
         })
         .catch(error => {
             console.error({error})
@@ -42,10 +48,10 @@ class SearchBar extends React.Component {
 
     render() {
         return(
-            <form className='search-input-form' onSubmit={this.handleSearch}>
-                        {/* <label className='search-label'>Start searching!</label> */}
-                            <input type='text' name='searchbar' id='search-input' onChange={(e) => this.onChange(e)} />
-                        <button className='search-button' >Search</button>
+            <form className='search-input-form' onSubmit={e => this.updateState(e)}>
+                <input type='text' name='search_input' id='search_input'           ref={input => (this.input = input)}
+                />
+                    <button type='submit' className='search-button' >Search</button>
             </form>
         )
     }

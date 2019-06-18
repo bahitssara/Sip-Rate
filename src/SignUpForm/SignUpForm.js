@@ -2,7 +2,6 @@ import React from 'react';
 import './SignUpForm.css';
 import SipRateContext from '../SipRateContext';
 import AuthApiService from '../services/auth-api-service';
-import ValidationError from '../ValidationError/ValidationError';
 
 
 
@@ -50,34 +49,6 @@ class SignUpForm extends React.Component {
             })
             }
 
-    addUserInfo(first_name) {
-        this.setState({first_name}, () => {this.validateUser(first_name)})
-    }
-
-    validateUser(fieldValue) {
-        const fieldErrors = {...this.state.validationMessages};
-        let hasError = false;
-    
-        fieldValue = fieldValue.trim();
-        if(fieldValue.length === 0) {
-          fieldErrors.first_name = 'First name is required';
-          hasError = true;
-        } else {
-          if (fieldValue.length < 2) {
-            fieldErrors.first_name = 'First name must be at least 2 characters long';
-            hasError = true;
-          } else {
-            fieldErrors.first_name = '';
-            hasError = false;
-          }
-        }
-    
-        this.setState({
-          validationMessages: fieldErrors,
-          first_nameValid: !hasError
-        }, this.formValid );
-    }
-
     render() {
         return(
             <section className='signup-page'>
@@ -93,7 +64,6 @@ class SignUpForm extends React.Component {
                                 name='first_name'
                                 id='first-name-input'
                             />
-                        <ValidationError hasError={!this.state.first_nameValid} message={this.state.validationMessages.first_name}/>
                             <label>Last Name</label>
                             <input 
                                 type='text'

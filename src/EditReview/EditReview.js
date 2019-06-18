@@ -2,7 +2,6 @@ import React from 'react';
 import './EditReview.css';
 import SipRateContext from '../SipRateContext';
 import ValidationError from '../ValidationError/ValidationError'
-import config from '../config'
 
 
 class EditReview extends React.Component{
