@@ -1,9 +1,38 @@
 textarea {
-    display:block;
-    margin: auto;
-  }
+  display:block;
+  margin: auto;
+  width: 200px;
+  height: 75px;
+  color: black;
+}
   
-  .add-review-button {
-    display: block;
-    margin: auto;
+.add-review-button {
+  display: block;
+  margin: auto; 
 }  
+
+.add-review-button {
+  margin-top: 10px;
+  border-radius: 4px;
+  height:40px;
+  width: 6em;
+  font-size: 15px;
+  color: black;
+}
+
+.review-page fieldset {
+  border: 2px solid #570515;
+  text-shadow: 1px 2px #570515;
+  padding: 20px;
+  margin: 15px;
+}
+
+.field label {
+  font-size: 30px;
+}
+
+.field input {
+  height: 25px;
+  width: 200px;
+  color: black;
+}

@@ -16,7 +16,8 @@ class App extends React.Component {
   state = {
     users: [],
     beverages: [],
-    reviews: []
+    reviews: [],
+    searchResults: []
   };
 
   componentDidMount() {
@@ -91,6 +92,7 @@ class App extends React.Component {
       users: this.state.users,
       beverages: this.state.beverages,
       reviews: this.state.reviews,
+      searchResults: this.state.searchResults,
       deleteReview: this.handleDeleteReview,
       editreview: this.handleEditReview,
       addReview: this.handleAddReview
@@ -105,8 +107,8 @@ class App extends React.Component {
             <Route path='/signin' exact component={LoginForm} />
             <Route path='/searchpage' exact component={SearchPage} />
             <Route path='/profilepage' component={ProfilePage} />
-            <Route path='/addreview' component={AddReview} />
-            <Route path='/editreview/:reviewId' component={EditReview} />
+            <Route path='/addreview/:clickedBeverage' component={AddReview} />
+            <Route path='/editreview/:clickedBeverage' component={EditReview} />
           </main>
         </div>
       </SipRateContext.Provider>

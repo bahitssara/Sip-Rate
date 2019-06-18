@@ -32,6 +32,33 @@ class AddReview extends React.Component{
 
     static contextType = SipRateContext;
 
+    componentDidMount() {
+        const { bev_code } = this.props.match.params
+        fetch(config.API_ENDPOINT + `/beverages/${bev_code}`,{
+          method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+            },
+        })
+          .then(res => {
+            if (!res.ok)
+              return res.json().then(error => Promise.reject(error))
+    
+            return res.json()
+          })
+          .then(responseData => {
+            this.setState({  
+              bev_name: responseData.bev_name,
+            })
+            console.log(this.state.bev_name)
+          })
+          .catch(error => {
+            console.error(error)
+            this.setState({ error })
+        })
+    }
+    
+
     addBevName(bev_name) {
         this.setState({bev_name}, () => {this.validateBevName(bev_name)})
     }
@@ -47,7 +74,7 @@ class AddReview extends React.Component{
     addUserReview(user_review) {
         this.setState({user_review}, () => {this.validateUserReview(user_review)})
     }
-
+ 
 
     handleReviewSubmit = e => {
         e.preventDefault();
@@ -147,19 +174,6 @@ class AddReview extends React.Component{
                         <fieldset>
                             <legend>Review</legend>
                             <div className='field'>
-                                <label>Beverage Type</label>
-                                <select 
-                                type='select'
-                                id='beverage-input'
-                                >
-                                <option value=''>Choose type:</option>
-                                    <option 
-                                        value='wine'>wine</option>
-                                    <option 
-                                        value='beer'>beer</option>
-                                </select>
-                            </div>
-                            <div className='field'>
                             <label>Beverage name</label>
                                 <input 
                                     type='text'
@@ -168,8 +182,6 @@ class AddReview extends React.Component{
                                     value={this.state.bev_name}
                                     onChange={e => this.addBevName(e.target.value)}
                                 />
-                                <ValidationError hasError={!this.state.nameValid} message={this.state.validationMessages.bev_name}/>
-
                             </div>
                             <div className='field'>
                                 <label>How did you like it?</label>
