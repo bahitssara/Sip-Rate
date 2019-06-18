@@ -41,6 +41,8 @@
   padding-bottom: 20px;  
   box-shadow: 1px 1px #570515;
   border-radius: 4px;
+  color: black;
+  font-size: 20px;
 }
 
 ul {

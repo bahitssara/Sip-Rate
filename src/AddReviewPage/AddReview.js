@@ -34,7 +34,7 @@ class AddReview extends React.Component {
         const { bev_id, bev_name, bev_type, rating, user_review } = ev.target
 
         BeveragesApiService.postReview({
-            user_id: '7',
+            user_id: '6',
             bev_id: bev_id.value,
             bev_name: bev_name.value,
             bev_type: bev_type.value,
@@ -178,7 +178,7 @@ class AddReview extends React.Component {
                                     <option value='5' >5</option>
                                 </select>
                             </div>
-                            <button className='add-review-button'>Submit Review</button>
+                            <button type='submit' className='add-review-button'>Submit Review</button>
                         </fieldset>
                     </form>
                 </div>

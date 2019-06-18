@@ -34,6 +34,7 @@
   .logged-in-search {
     font-size: 30px;
     text-shadow: 1px 1px #570515;
+    display: block;
   }
 
   .fa-wine-glass-alt{
