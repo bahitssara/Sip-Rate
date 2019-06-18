@@ -28,33 +28,6 @@ class EditReview extends React.Component{
         }
     }
 
-    componentDidMount() {
-        const { reviewId } = this.props.match.params
-        fetch(config.API_ENDPOINT + `/reviews/${reviewId}`,{
-          method: 'GET',
-            headers: {
-                'content-type': 'application/json',
-            },
-        })
-          .then(res => {
-            if (!res.ok)
-              return res.json().then(error => Promise.reject(error))
-    
-            return res.json()
-          })
-          .then(responseData => {
-            this.setState({
-              bev_name: responseData.bev_name,  
-              user_review: responseData.user_review,
-              rating: responseData.rating,
-            })
-          })
-          .catch(error => {
-            console.error(error)
-            this.setState({ error })
-          })
-      }
-
     static contextType = SipRateContext;
 
     editRating(rating) {

@@ -32,30 +32,6 @@ class AddReview extends React.Component{
 
     static contextType = SipRateContext;
 
-    componentDidMount() {
-        const { bev_id } = this.props.match.params
-        fetch(config.API_ENDPOINT + `/beverages/${bev_id}`, {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
-        .then(res => {
-            if(!res.ok)
-                return res.json().then(error =>
-                    Promise.reject(error));
-        })
-        .then(responseData => {
-            this.setState({
-                bev_id: responseData.bev_id,
-                bev_name: responseData.bev_name, 
-            })
-        })
-        .catch(error => {
-            console.error({error})
-        })
-    }
-
     addBevName(bev_name) {
         this.setState({bev_name}, () => {this.validateBevName(bev_name)})
     }
