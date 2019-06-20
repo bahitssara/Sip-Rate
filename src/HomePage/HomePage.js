@@ -14,8 +14,6 @@ class HomePage extends React.Component {
     renderLoggedInLink() {
         return (
             <div className='header-logged-in-profile'>
-                <Link to='/addreview' className='logged-in-search'>Add new review <i className="fas fa-wine-glass-alt"></i></Link>
-                { ' ' }
                 <Link to='/searchpage' className='logged-in-search'>Search for beverage<i className="fas fa-wine-glass-alt"></i></Link>
                 <ProfilePage />
             </div>

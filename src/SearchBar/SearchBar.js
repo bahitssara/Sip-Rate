@@ -4,6 +4,8 @@ import config from '../config';
 import SipRateContext from '../SipRateContext';
 import StarRating from '../StarRating/StarRating';
 import { Link } from 'react-router-dom';
+import AddReview from '../AddReviewPage/AddReview';
+import BeveragesApiService from '../services/beverages-api-service'
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -11,6 +13,14 @@ class SearchBar extends React.Component {
         this.state = {
             query: '',
             searchResults: [],
+            id: '',
+            bev_name: '',
+            bev_type: '',
+            user_review: '',
+            rating: Number(),
+            user_id: '',
+            bev_id: '',
+            date_added: new Date(),
         }
         this.handleSearch = this.handleSearch.bind(this)
     }
@@ -20,7 +30,7 @@ class SearchBar extends React.Component {
         ev.preventDefault()
         const value = this.input.value
         this.setState({
-            query: value
+            query: value,
         })
         this.handleSearch(value)
     }
@@ -50,6 +60,31 @@ class SearchBar extends React.Component {
             })
     }
 
+    handleReviewSubmit = ev => {
+        ev.preventDefault();
+        this.setState({ error: null })
+        const { bev_id, bev_name, bev_type, rating, user_review } = ev.target
+
+        BeveragesApiService.postReview({
+            user_id: '6',
+            bev_id: bev_id.value,
+            bev_name: bev_name.value,
+            bev_type: bev_type.value,
+            rating: rating.value,
+            user_review: user_review.value
+        })
+        .then(() => 
+            bev_id.value='',
+            bev_name.value='',
+            bev_type.value='',
+            rating.value='',
+            user_review.value='',
+        )
+        .catch(res => {
+            this.setState({ error: res.error })
+        })
+    }
+
     render() {
         return (
             <div className='search'>
@@ -68,8 +103,17 @@ class SearchBar extends React.Component {
                                 <p className='bev_type'>{beverage.type}</p>
                                 <p className='bev_description'>{beverage.varietal}</p>
                                 <StarRating value={beverage.snoothrank} />
+                                <AddReview 
+                                    bev_id={beverage.code} 
+                                    bev_name={beverage.name} 
+                                    bev_type={beverage.type} 
+                                    user_review={this.state.user_review} 
+                                    rating={this.state.rating} 
+                                    onAddReview={(e) => this.handleReviewSubmit(e)}
+                                    />
                             </li>
                         )}
+                        
                     </ul>
                 </div>
             </div>
