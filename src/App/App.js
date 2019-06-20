@@ -4,7 +4,6 @@ import HomePage from '../HomePage/HomePage'
 import Header from '../Header/Header';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import SearchPage from '../SearchPage/SearchPage';
-import AddReview from '../AddReviewPage/AddReview';
 import EditReview from '../EditReview/EditReview';
 import SipRateContext from '../SipRateContext';
 import config from '../config';
@@ -103,7 +102,6 @@ class App extends React.Component {
             <Route path='/' exact component={HomePage} />
             <Route path='/signup' component={SignUpForm} />
             <Route path='/searchpage' exact component={SearchPage} />
-            <Route path='/addreview' component={AddReview} />
             <Route path='/editreview/:clickedBeverage' component={EditReview} />
           </main>
         </div>

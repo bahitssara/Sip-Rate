@@ -3,7 +3,6 @@ import './SearchBar.css';
 import config from '../config';
 import SipRateContext from '../SipRateContext';
 import StarRating from '../StarRating/StarRating';
-import { Link } from 'react-router-dom';
 import AddReview from '../AddReviewPage/AddReview';
 import BeveragesApiService from '../services/beverages-api-service'
 
@@ -66,7 +65,7 @@ class SearchBar extends React.Component {
         const { bev_id, bev_name, bev_type, rating, user_review } = ev.target
 
         BeveragesApiService.postReview({
-            user_id: '6',
+            user_id: '7',
             bev_id: bev_id.value,
             bev_name: bev_name.value,
             bev_type: bev_type.value,
@@ -83,6 +82,7 @@ class SearchBar extends React.Component {
         .catch(res => {
             this.setState({ error: res.error })
         })
+        window.location='/'
     }
 
     render() {
@@ -97,9 +97,7 @@ class SearchBar extends React.Component {
                         <h3>Click on your wine choice to add a review</h3>
                         {this.state.searchResults.map(beverage =>
                             <li className='search-li-item' key={beverage.code}>
-                                <Link to='/addreview' className='beverage-link'>
-                                    {beverage.name}
-                                </Link>
+                                <a href={beverage.link} className='beverage-link' rel='noopener noreferrer' target='_blank'>{beverage.name}</a>
                                 <p className='bev_type'>{beverage.type}</p>
                                 <p className='bev_description'>{beverage.varietal}</p>
                                 <StarRating value={beverage.snoothrank} />
