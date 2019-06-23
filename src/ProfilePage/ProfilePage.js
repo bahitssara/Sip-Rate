@@ -18,7 +18,6 @@ class ProfilePage extends React.Component {
             'content-type': 'application/json',
         }
     })
-
         .then(res => {
             if (!res.ok) return res.json().then(error => Promise.reject(error));
         })
@@ -35,7 +34,7 @@ class ProfilePage extends React.Component {
         return(
             <section className='profile-page'>
                 <div className='user-reviews-main'>
-                    <h2>Your Posted Reviews:</h2>
+                    <h2>All Reviews</h2>
                     <ul className='user-reviews-list'>
                     {reviews.map(review => 
                          <li key={review.id} className='user-li-item'>
@@ -44,7 +43,7 @@ class ProfilePage extends React.Component {
                          <p>{review.user_review}</p>
                          <span className='date-created'>Posted: {format(review.date_created, 'MM/DD/YYYY')}</span>
                          <StarRating value={review.rating} />
-                         <button className='delete-review-button' onClick={this.handleClickDelete}>Delete</button>
+                         {/* <button className='delete-review-button' onClick={this.handleClickDelete}>Delete</button> */}
                          </li>                       
                     )}
                     </ul>
