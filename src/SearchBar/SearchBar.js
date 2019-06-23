@@ -82,7 +82,6 @@ class SearchBar extends React.Component {
         .catch(res => {
             this.setState({ error: res.error })
         })
-        window.location='/'
     }
 
     render() {
