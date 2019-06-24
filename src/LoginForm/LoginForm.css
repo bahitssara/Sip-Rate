@@ -30,6 +30,9 @@ label {
     width: 15em;
     height:2.5em;
     padding-bottom: 20px;   
+    color: black;
+    font-size: 15px;
+    border-radius: 3px;
   }
 
   .sign-in-email {

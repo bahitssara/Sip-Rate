@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginForm.css';
-import AuthApiService from '../services/auth-api-service'
+// import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 
 
@@ -15,19 +15,28 @@ class LoginForm extends React.Component {
         ev.preventDefault();
         this.setState({ error: null});
         const { email, password } = ev.target
-           AuthApiService.postLogin({
-             email: email.value,
-             password: password.value,
-           })
-             .then(res => {
-               email.value = ''
-               password.value = ''
-               TokenService.saveAuthToken(res.authToken)
-               window.location = '/';
-            })
-             .catch(res => {
-               this.setState({ error: res.error })
-             })
+
+        TokenService.saveAuthToken(
+           TokenService.makeBasicAuthToken(email.value, password.value)
+        )
+        
+        email.value = ''
+        password.value = ''
+    
+
+        //    AuthApiService.postLogin({
+        //      email: email.value,
+        //      password: password.value,
+        //    })
+        //      .then(res => {
+        //        email.value = ''
+        //        password.value = ''
+        //        TokenService.saveAuthToken(res.authToken)
+        //        window.location = '/';
+        //     })
+        //      .catch(res => {
+        //        this.setState({ error: res.error })
+        //      })
     }
     render(){
         return(

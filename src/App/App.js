@@ -6,6 +6,7 @@ import SignUpForm from '../SignUpForm/SignUpForm';
 import SearchPage from '../SearchPage/SearchPage';
 import EditReview from '../EditReview/EditReview';
 import SipRateContext from '../SipRateContext';
+import TokenService from '../services/token-service'
 import config from '../config';
 
 class App extends React.Component {
@@ -20,9 +21,15 @@ class App extends React.Component {
     Promise.all([
       fetch(config.API_ENDPOINT + '/beverages', {
         method: 'GET',
+        headers: {
+          'authorization': `basic ${TokenService.getAuthToken()}`,
+        },
       }),
       fetch(config.API_ENDPOINT + '/reviews', {
         method: 'GET',
+        headers: {
+          'authorization': `basic ${TokenService.getAuthToken()}`,
+        },
       })
     ])
       .then(([bevRes, reviewRes]) => {

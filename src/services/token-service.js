@@ -2,9 +2,6 @@ import config from '../config'
 const jwtDecode = require('jwt-decode')
 
 const TokenService = {
-  saveAuthToken(token) {
-    window.sessionStorage.setItem(config.TOKEN_KEY, token)
-  },
   getAuthToken() {
     return window.sessionStorage.getItem(config.TOKEN_KEY)
   },
@@ -16,6 +13,9 @@ const TokenService = {
   },
   makeBasicAuthToken(email, password) {
     return window.btoa(`${email}:${password}`)
+  },
+  saveAuthToken(token) {
+    window.sessionStorage.setItem(config.TOKEN_KEY, token)
   },
   getUserName() {
     let token = TokenService.getAuthToken();
