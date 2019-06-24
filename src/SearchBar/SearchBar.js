@@ -65,7 +65,7 @@ class SearchBar extends React.Component {
         const { bev_id, bev_name, bev_type, rating, user_review } = ev.target
 
         BeveragesApiService.postReview({
-            user_id: '7',
+            user_id: '16',
             bev_id: bev_id.value,
             bev_name: bev_name.value,
             bev_type: bev_type.value,

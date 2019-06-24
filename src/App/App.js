@@ -8,6 +8,8 @@ import EditReview from '../EditReview/EditReview';
 import SipRateContext from '../SipRateContext';
 import TokenService from '../services/token-service'
 import config from '../config';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import PrivateRoute from '../Utils/PrivateOnlyRoute';
 
 class App extends React.Component {
   state = {
@@ -100,9 +102,9 @@ class App extends React.Component {
           <main className='App'>
             <Route path='/' component={Header} />
             <Route path='/' exact component={HomePage} />
-            <Route path='/signup' component={SignUpForm} />
-            <Route path='/searchpage' exact component={SearchPage} />
-            <Route path='/editreview/:clickedBeverage' component={EditReview} />
+            <PublicOnlyRoute path='/signup' component={SignUpForm} />
+            <PrivateRoute path='/searchpage' exact component={SearchPage} />
+            <PrivateRoute path='/editreview/:clickedBeverage' component={EditReview} />
           </main>
         </div>
       </SipRateContext.Provider>
