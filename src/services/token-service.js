@@ -17,15 +17,21 @@ const TokenService = {
   saveAuthToken(token) {
     window.sessionStorage.setItem(config.TOKEN_KEY, token)
   },
-  getUserName() {
+  getUserEmail() {
     let token = TokenService.getAuthToken();
     if (!token) {
       return "Guest";
     }
     let decoded = jwtDecode(token);
     return decoded.sub;
+  },
+  getEmail() {
+    return window.sessionStorage.getItem('email');
+  },
+  
+  saveEmail(email) {
+    window.sessionStorage.setItem('email', email);
   }
-
 };
 
 export default TokenService 

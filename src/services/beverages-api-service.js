@@ -1,16 +1,19 @@
 import TokenService from './token-service'
 import config from '../config'
 
+const email = `${TokenService.getEmail()}`
+
 const BeveragesApiService = {
     postReview(review) {
       return fetch(`${config.API_ENDPOINT}/reviews`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'authorization': `basic ${TokenService.getAuthToken()}`
+          'Authorization': `basic ${TokenService.getAuthToken()}`,
+          email
         },
-        body: JSON.stringify(review),
-      })
+        body: JSON.stringify(review)
+        })
         .then(res =>
           (!res.ok)
             ? res.json().then(e => Promise.reject(e))

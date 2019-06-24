@@ -20,6 +20,7 @@ class LoginForm extends React.Component {
              password: password.value,
            })
              .then(res => {
+               TokenService.saveEmail(email.value)
                email.value = ''
                password.value = ''
                TokenService.saveAuthToken(res.authToken)
