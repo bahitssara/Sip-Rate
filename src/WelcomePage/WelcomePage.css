@@ -8,8 +8,12 @@
   .description {
     width: 50%;
     float: right;
-    text-shadow: 1px 2px #251e1e;
+    text-shadow: 1px 1px #251e1e;
     margin-left: 15px;
+  }
+  .description p {
+    font-size: 25px;
+    text-shadow: 1px 3px #251e1e;
   }
 }
 
@@ -19,5 +23,10 @@
     float: right;
     margin-top: 50px;
     margin-bottom: 25px;
+  }
+
+  .description p {
+    font-size: 25px;
+    text-shadow: 1px 3px #251e1e;
   }
 }
