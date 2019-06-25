@@ -9,7 +9,7 @@ const BeveragesApiService = {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'Authorization': `basic ${TokenService.getAuthToken()}`,
+          'Authorization': `bearer ${TokenService.getAuthToken()}`,
           email
         },
         body: JSON.stringify(review)

@@ -26,13 +26,13 @@ class App extends React.Component {
       fetch(config.API_ENDPOINT + '/beverages', {
         method: 'GET',
         headers: {
-          'authorization': `basic ${TokenService.getAuthToken()}`,
+          'authorization': `bearer ${TokenService.getAuthToken()}`,
         },
       }),
       fetch(config.API_ENDPOINT + '/reviews', {
         method: 'GET',
         headers: {
-          'authorization': `basic ${TokenService.getAuthToken()}`,
+          'authorization': `bearer ${TokenService.getAuthToken()}`,
         },
       })
     ])
