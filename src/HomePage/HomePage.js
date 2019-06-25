@@ -3,8 +3,8 @@ import './HomePage.css'
 import { Link } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import TokenService from '../services/token-service'
-import ProfilePage from '../ProfilePage/ProfilePage'
 import WelcomePage from '../WelcomePage/WelcomePage';
+import Reviews from '../Reviews/Reviews';
 
 class HomePage extends React.Component {
     handleLogoutClick = () => {
@@ -15,7 +15,7 @@ class HomePage extends React.Component {
         return (
             <div className='header-logged-in-profile'>
                 <Link to='/searchpage' className='logged-in-search'>Search for beverage<i className="fas fa-wine-glass-alt"></i></Link>
-                <ProfilePage />
+                <Reviews />
             </div>
         )
     } 

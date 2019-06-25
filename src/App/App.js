@@ -10,6 +10,7 @@ import TokenService from '../services/token-service'
 import config from '../config';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import PrivateRoute from '../Utils/PrivateOnlyRoute';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 class App extends React.Component {
   state = {
@@ -114,6 +115,7 @@ class App extends React.Component {
             <Route path='/' exact component={HomePage} />
             <PublicOnlyRoute path='/signup' component={SignUpForm} />
             <PrivateRoute path='/searchpage' exact component={SearchPage} />
+            <PrivateRoute path='/profilepage' exact component={ProfilePage} />
             <PrivateRoute path='/editreview/:clickedBeverage' component={EditReview} />
           </main>
         </div>
