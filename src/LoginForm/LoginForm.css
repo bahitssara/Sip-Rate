@@ -52,3 +52,7 @@ label {
     width: 6em;
     font-size: 20px;
   }
+
+  .login-error {
+    color: white;
+  }

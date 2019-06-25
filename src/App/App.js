@@ -16,7 +16,8 @@ class App extends React.Component {
     users: [],
     beverages: [],
     reviews: [],
-    searchResults: []
+    searchResults: [],
+    error: null
   };
 
   componentDidMount() {
@@ -83,7 +84,15 @@ class App extends React.Component {
     this.setState({
       beverages: beverages
     })
-  };
+  }
+
+  setError = (error) => {
+    console.error(error)
+    this.setState({ 
+      error 
+    })
+  }
+
 
 
   render(){
@@ -94,7 +103,8 @@ class App extends React.Component {
       searchResults: this.state.searchResults,
       deleteReview: this.handleDeleteReview,
       editreview: this.handleEditReview,
-      addReview: this.handleAddReview
+      addReview: this.handleAddReview,
+      error: this.state.error
     }
     return (
       <SipRateContext.Provider value={contextValue}>

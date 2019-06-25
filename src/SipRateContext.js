@@ -5,6 +5,7 @@ const SipRateContext = React.createContext({
     beverages: [],
     reviews: [],
     searchResults: [],
+    error: null,
     deleteReview: () => {},
     addReview: () => {},
     editReview: () => {},

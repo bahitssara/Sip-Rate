@@ -2,14 +2,28 @@ import React from 'react';
 import './LoginForm.css';
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
-
+import ValidationError from '../ValidationError/ValidationError'
 
 class LoginForm extends React.Component {
     static defaultProps = {
         onLoginSuccess: () => {}
     };
 
-    state = { error: null }; 
+    constructor(props) {
+        super(props)
+            this.state = {
+                email: '',
+                password: '',
+                error: null,
+                emailValid: false,
+                passwordValid: false,
+                validationMessages: {
+                    email: '',
+                    password: '',
+                }   
+            }
+    }
+
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault();
@@ -30,7 +44,71 @@ class LoginForm extends React.Component {
                this.setState({ error: res.error })
              })
     }
+
+    addEmail(email) {
+        this.setState({email}, () => {this.validateEmail(email)});
+    }
+    
+    addPassword(password) {
+        this.setState({password}, () => {this.validatePassword(password)});
+    }
+
+    validateEmail(fieldValue) {
+        const fieldErrors = {...this.state.validationMessage}
+            let hasError = false;
+
+            fieldValue = fieldValue.trim();
+            if(fieldValue.length === 0) {
+                fieldErrors.email = 'Email is required';
+                hasError = true;
+            } else {
+                if(fieldValue.length < 3) {
+                    fieldErrors.email = 'Email must be at least 3 characters long';
+                    hasError = true;
+                } else {
+                    fieldErrors.email = '';
+                    hasError = false;
+                }
+            }
+
+            this.setState({
+                validationMessages: fieldErrors,
+                emailValid: !hasError
+            }, this.formValid);
+    }
+
+    validatePassword(fieldValue) {
+        const fieldErrors = {...this.state.validationMessage}
+            let hasError = false;
+
+            fieldValue = fieldValue.trim();
+            if(fieldValue.length === 0) {
+                fieldErrors.password = 'Password is required';
+                hasError = true;
+            } else {
+                if(fieldValue.length < 8) {
+                    fieldErrors.password = 'Password must be at least 8 characters long';
+                    hasError = true;
+                } else {
+                    fieldErrors.password = '';
+                    hasError = false;
+                }
+            }
+
+            this.setState({
+                validationMessages: fieldErrors,
+                passwordValid: !hasError
+            }, this.formValid);
+    }
+
+    formValid(){
+        this.setState({
+            formValid: this.state.emailValid && this.state.passwordValid
+        });
+    }
+ 
     render(){
+        const { error } = this.state;
         return(
             <div className="login-form">
                 <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
@@ -41,14 +119,28 @@ class LoginForm extends React.Component {
                                     type='text' 
                                     name='email' 
                                     id='email-input' 
+                                    value={this.state.email} 
+                                    onChange={e => this.addEmail(e.target.value)}
                                 />
+                            <ValidationError hasError={!this.state.emailValid} message={this.state.validationMessages.email}/>
                             <label htmlFor='password' className='sign-in-password'>Password</label>
                                 <input 
                                     type='text' 
                                     name='password' 
                                     id='password-input' 
+                                    value={this.state.password} 
+                                    onChange={e => this.addPassword(e.target.value)}
                                 />
+                             <ValidationError hasError={!this.state.passwordValid} message={this.state.validationMessages.password}/>
+
+                                <div className="error" role="alert">
+                                    {error && <span className="login-error">{error}</span>}
+                                </div>
                             <button className='sign-in-button'>Sign In</button>
+                            <h4>Demo login info:</h4>
+                            <p>Email: testuser101@email.com</p>
+                            <p>Password: Testuser101!</p>
+
                     </fieldset>
                 </form>
             </div>
