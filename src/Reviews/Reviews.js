@@ -12,7 +12,7 @@ class Reviews extends React.Component {
         const { reviews=[] } = this.context;
         return(
             <section className='profile-page'>
-                <div className='user-reviews-main'>
+                <div className='user-posted-reviews'>
                     <h2>Browse posted reviews</h2>
                     <ul className='user-reviews-list'>
                     {reviews.map(review => 
