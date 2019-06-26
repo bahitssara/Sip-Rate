@@ -13,7 +13,7 @@ class Header extends React.Component {
             <div className='header-logged-in'>
                 <Link to='/' className='title'>Sip and Rate</Link>
                 <Link to='/profilepage' className='homepage'>
-                    <i class="fas fa-home" />
+                    <i className="fas fa-home" />
                 </Link>
                 <Link
                     className='logout-link'
