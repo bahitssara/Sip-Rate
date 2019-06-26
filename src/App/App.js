@@ -14,7 +14,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 
 class App extends React.Component {
   state = {
-    users: [],
+    user: '',
     beverages: [],
     reviews: [],
     searchResults: [],
@@ -23,12 +23,6 @@ class App extends React.Component {
 
   componentDidMount() {
     Promise.all([
-      fetch(config.API_ENDPOINT + '/beverages', {
-        method: 'GET',
-        headers: {
-          'authorization': `bearer ${TokenService.getAuthToken()}`,
-        },
-      }),
       fetch(config.API_ENDPOINT + '/reviews', {
         method: 'GET',
         headers: {
@@ -36,21 +30,15 @@ class App extends React.Component {
         },
       })
     ])
-      .then(([bevRes, reviewRes]) => {
-        if(!bevRes.ok)
-          return bevRes.json().then(e => Promise.reject(e))
+      .then(([reviewRes]) => {
         if(!reviewRes.ok) 
           return reviewRes.json().then(e => Promise.reject(e))
 
           return Promise.all([
-            bevRes.json(),
             reviewRes.json(),
           ])
         })
-        .then(([beverages, reviews]) => {
-          this.setState({
-            beverages,
-          })
+        .then(([reviews]) => {
           this.setState({
             reviews,
           })
@@ -98,7 +86,7 @@ class App extends React.Component {
 
   render(){
     const contextValue = {
-      users: this.state.users,
+      user: this.state.user,
       beverages: this.state.beverages,
       reviews: this.state.reviews,
       searchResults: this.state.searchResults,

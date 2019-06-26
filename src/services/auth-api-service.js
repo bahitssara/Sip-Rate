@@ -1,5 +1,6 @@
 import config from '../config'
 
+
 const AuthApiService = {
     postLogin(credentials) {
         return fetch(`${config.API_ENDPOINT}/login`, {
@@ -9,10 +10,10 @@ const AuthApiService = {
           },
           body: JSON.stringify(credentials),
         })
-          .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
+        .then(response =>
+            (!response.ok)
+              ? response.json().then(e => Promise.reject(e))
+              : response.json()
           )
       },
       postUser(user) {

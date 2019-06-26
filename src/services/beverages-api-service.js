@@ -1,8 +1,6 @@
 import TokenService from './token-service'
 import config from '../config'
 
-const email = `${TokenService.getEmail()}`
-
 const BeveragesApiService = {
     postReview(review) {
       return fetch(`${config.API_ENDPOINT}/reviews`, {
@@ -10,7 +8,6 @@ const BeveragesApiService = {
         headers: {
           'content-type': 'application/json',
           'Authorization': `bearer ${TokenService.getAuthToken()}`,
-          email
         },
         body: JSON.stringify(review)
         })

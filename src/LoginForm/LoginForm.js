@@ -1,8 +1,9 @@
-import React from 'react';
-import './LoginForm.css';
+import React from 'react'
+import './LoginForm.css'
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 import ValidationError from '../ValidationError/ValidationError'
+import SipRateContext from '../SipRateContext'
 
 class LoginForm extends React.Component {
     static defaultProps = {
@@ -14,6 +15,7 @@ class LoginForm extends React.Component {
             this.state = {
                 email: '',
                 password: '',
+                user: '',
                 error: null,
                 emailValid: false,
                 passwordValid: false,
@@ -24,6 +26,7 @@ class LoginForm extends React.Component {
             }
     }
 
+    static contextType = SipRateContext;
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault();
@@ -34,10 +37,10 @@ class LoginForm extends React.Component {
              password: password.value,
            })
              .then(res => {
-               TokenService.saveEmail(email.value)
                email.value = ''
                password.value = ''
                TokenService.saveAuthToken(res.authToken)
+               TokenService.saveUserId(res.userid)
                window.location = '/';
             })
              .catch(res => {

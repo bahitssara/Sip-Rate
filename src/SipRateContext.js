@@ -1,11 +1,11 @@
 import React from 'react';
 
 const SipRateContext = React.createContext({
-    users: [],
     beverages: [],
     reviews: [],
     searchResults: [],
     error: null,
+    user: '',
     deleteReview: () => {},
     addReview: () => {},
     editReview: () => {},

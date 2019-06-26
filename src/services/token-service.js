@@ -25,12 +25,11 @@ const TokenService = {
     let decoded = jwtDecode(token);
     return decoded.sub;
   },
-  getEmail() {
-    return window.sessionStorage.getItem('email');
+  saveUserId(userid) {
+    window.sessionStorage.setItem('userid', userid);
   },
-  
-  saveEmail(email) {
-    window.sessionStorage.setItem('email', email);
+  getUserId(userid) {
+    return window.sessionStorage.getItem('userid', userid)
   }
 };
 
