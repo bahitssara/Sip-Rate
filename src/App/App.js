@@ -4,7 +4,6 @@ import HomePage from '../HomePage/HomePage'
 import Header from '../Header/Header';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import SearchPage from '../SearchPage/SearchPage';
-import EditReview from '../EditReview/EditReview';
 import SipRateContext from '../SipRateContext';
 import TokenService from '../services/token-service'
 import config from '../config';
@@ -104,7 +103,6 @@ class App extends React.Component {
             <PublicOnlyRoute path='/signup' component={SignUpForm} />
             <PrivateRoute path='/searchpage' exact component={SearchPage} />
             <PrivateRoute path='/profilepage' exact component={ProfilePage} />
-            <PrivateRoute path='/editreview/:clickedBeverage' component={EditReview} />
           </main>
         </div>
       </SipRateContext.Provider>
