@@ -1,29 +1,29 @@
 .search-label {
-    font-size: 1.5em;
-    text-shadow: 1px 1px black;
+  font-size: 1.5em;
+  text-shadow: 1px 1px black;
 }
 
 .search-input-form input {
-    width: 24em;
-    height:3.2em;
-    border-radius: 5px;
-    margin-bottom: 20px;   
-    color: black;
+  width: 24em;
+  height:3.2em;
+  border-radius: 5px;
+  margin-bottom: 20px;   
+  color: black;
 }
 
 .search-button {
-    margin-top: 10px;
-    border-radius: 4px;
-    height:35px;
-    width: 4em;
-    font-size: 20px;
-    display: block;
-    margin: auto;
-    color:black;
+  margin-top: 10px;
+  border-radius: 4px;
+  height:35px;
+  width: 4em;
+  font-size: 20px;
+  display: block;
+  margin: auto;
+  color:black;
 }
 
 .search-results {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .results-li {
@@ -37,7 +37,6 @@
 .search-li-item {
   border: 1px;
   border-radius: 3px;
-  margin: 8px;
   background-color: rgba(87,5,21,0.65);
   color: white;
 } 

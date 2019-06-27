@@ -47,7 +47,7 @@ class ReviewFormat extends React.Component {
         const { id, bev_name, bev_type, user_review, rating, date_created } = this.props;
         return (
             <ul className='user-reviews-list'>
-                    <li key={id} className='user-li-item'>
+                    <li key={id} className='user-review-item'>
                         <h4>{bev_name}</h4>
                         <p>{bev_type}</p>
                         <p>{user_review}</p>

@@ -14,7 +14,7 @@ class Reviews extends React.Component {
             <section className='profile-page'>
                 <div className='user-posted-reviews'>
                     <h2>Browse posted reviews</h2>
-                    <ul className='user-reviews-list'>
+                    <ul className='all-reviews-list'>
                     {reviews.map(review => 
                          <li key={review.id} className='user-li-item'>
                          <h4>{review.bev_name}</h4>

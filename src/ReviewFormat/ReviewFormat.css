@@ -1,4 +1,4 @@
-/* .user-reviews-main {
+ .user-reviews-main {
     margin: auto;
  }
    
@@ -8,10 +8,11 @@
    margin: auto;
  }
  
- .user-li-item {
+ .user-reviews-list {
+   list-style-type: none;
    border: 1px;
    border-radius: 3px;
-   margin: 8px;
+   margin: 10px;
    background-color: rgba(87,5,21,0.65);
    color: white;
  }
@@ -28,27 +29,3 @@
  .delete-review-button {
    color: black;
  }
- 
- @media screen and (min-width: 320px) {
-   .description {
-     text-shadow: 1px 2px #251e1e;
-   }
- }
- 
- @media screen and (min-width: 765px) {
-   .description {
-     width: 50%;
-     float: right;
-     text-shadow: 1px 2px #251e1e;
-     margin-left: 15px;
-   }
- }
- 
- @media screen and (min-width: 1000px) { 
-   .description {
-     width: 49%;
-     float: right;
-     margin-top: 50px;
-     margin-bottom: 25px;
-   }
- } */

@@ -57,8 +57,8 @@ class SearchBar extends React.Component {
             .catch(error => {
                 console.error({ error })
             })
-    }
-
+    } 
+ 
     handleReviewSubmit = ev => {
         ev.preventDefault();
         this.setState({ error: null })
