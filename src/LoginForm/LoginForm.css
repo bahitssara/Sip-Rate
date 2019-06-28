@@ -9,46 +9,36 @@ label {
 }
 
 .sign-in-legend {
-  font-size: 2.2em;
   text-shadow: 1px 3px #570515;
 }
 
 .sign-in-button {
   display: block;
   margin: auto;
+  background-color: white;
   color: black;
-}
-
-.sign-in-main input {
-  width: 15em;
-  height:2.5em;
-  padding-bottom: 20px;   
-  color: black;
-  font-size: 15px;
-  border-radius: 3px;
-}
-
-.sign-in-email {
-  font-size: 1.5em;
-  text-shadow: 1px 1px black;
-}
-
-.sign-in-password {
-  font-size: 1.5em;
-  text-shadow: 1px 1px black;
-}
-
-.sign-in-button {
   margin-top: 10px;
   border-radius: 4px;
   height:40px;
-  width: 6em;
+  width: 135px;
   font-size: 20px;
+}
+
+.sign-in-button:hover{
+  background-color: #570515;
+  color: white;
+}
+
+.sign-in-main input {
+  width: 90%;
+  color: black;
+  font-size: 15px;
+  border-radius: 5px;
 }
 
 .login-error {
   color: white;
-}
+} 
 
 
 @media screen and (min-width: 320px) {
@@ -56,22 +46,91 @@ label {
     width: 90%;
     margin: auto;
   }
-}
 
+  .sign-in-main h1 {
+    font-size: 37px;
+    text-decoration: underline;
+  }
+
+  .sign-in-email, .sign-in-password {
+    font-size: 33px;
+    text-shadow: 1px 1px black;
+  }
+
+  .sign-in-main input {
+    height: 35px;
+    font-size: 15px;
+  }
+
+  .demo-login-info {
+    font-size: 20px;
+  }
+}
 
 @media screen and (min-width: 765px) {
   .sign-in-main {
-    width: 90%;
+    width: 98%;
     margin: auto;
+  }
+
+  .sign-in-main h1 {
+    font-size: 45px;
+    text-decoration: underline;
+  }
+
+  .sign-in-email, .sign-in-password {
+    font-size: 40px;
+    text-shadow: 2px 2px #570515;
+  }
+
+  .sign-in-main input {
+    height:50px;
+    font-size: 27px;
+  }
+
+  .demo-login-info {
+    font-size: 24px;
+  }
+
+  .sign-in-button {
+    margin-top: 17px;
+    height:50px;
+    width: 180px;
+    font-size: 26px;
   }
 }
 
 @media screen and (min-width: 1000px) { 
   .sign-in-main {
-    width: 49%;
-    float: right;
-    margin-top: 50px;
-    margin-bottom: 25px;
+    width: 94%;
+    margin: auto;
+  }
+
+  .sign-in-main h1 {
+    font-size: 58px;
+    text-decoration: underline;
+  }
+
+  .sign-in-email, .sign-in-password {
+    font-size: 50px;
+    text-shadow: 2px 2px #570515;
+  }
+
+  .sign-in-main input {
+    width: 80%;
+    height:65px;
+    font-size: 27px;
+  }
+
+  .demo-login-info {
+    font-size: 30px;
+  }
+
+  .sign-in-button {
+    margin-top: 30px;
+    height:65px;
+    width: 220px;
+    font-size: 30px;
   }
 }
 

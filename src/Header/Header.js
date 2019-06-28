@@ -18,7 +18,7 @@ class Header extends React.Component {
                     className='logout-link'
                     onClick={this.handleLogoutClick}
                     to='/'>
-                <span title='Logout'><i class="fas fa-sign-out-alt"/></span>
+                <span title='Logout'><i className="fas fa-sign-out-alt"/></span>
                 </Link>
             </div>
         )
@@ -31,7 +31,7 @@ class Header extends React.Component {
               className='register-link'
               to='/signup'>
               Register {' '}
-              <i class="fas fa-user-plus" />
+              <i className="fas fa-user-plus" />
             </Link>
           </div>
         )
