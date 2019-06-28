@@ -14,6 +14,7 @@ I was inspired to create an app that allows wine lovers to search their favorite
 ![Search page](images/README/search-page.png)
 ![Add Review](images/README/add-review.png)
 ![Profile Page](images/README/profile-page.png)
+### Final App
 
 ## Summary
 Sip & Rate is an app that allows users to create a simple account, and once logged in can search a wine they've had, and give their thoughts! This app is focused for personal use and aimed at frequent users who return to view all their thoughts! Users can also view all posted reviews, just to see what others may think. This app is the perfect place to keep tabs on all your favorite and least favorite grape beverages! 

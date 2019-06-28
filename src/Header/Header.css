@@ -1,7 +1,7 @@
 nav,
 footer {
-  padding: 1.5% 0;
-  background-color: rgba(76,97,61,0.40);
+  padding: 1.3% 0;
+  background-color: rgba(76,97,61,0.65);
 }
 
 nav {
@@ -12,30 +12,100 @@ nav {
   z-index: 10;
 }
 
-.title {
-  float: left;
+.banner, .banner-link {
+  text-decoration: none;
 }
 
-.register-link {
-  float: right;
-}
-
-.fa-home {
-  float: right;
-  font-size: 1.5em;
+a:hover {
   color: #570515;
-  display: inline-block;
-  padding-left: 5px;
+  cursor: pointer;
 }
 
-.logout-link {
-  float: right;
+a:visited {
+  color: #570515;
 }
 
 .header h1 {
   margin-top: 100px;
-  font-size: 4em;
   font-family: 'Oswald', sans-serif;
   color: white;
-  text-shadow: 1px 2px 3px #570515;
+  text-shadow: 3px 2px #570515;
+}
+
+@media screen and (min-width: 320px) {
+  .navigation {
+    display: flex;
+  }
+
+  .header h1 {
+    margin-top: 100px;
+    font-size: 60px;
+  }
+
+  .navigation, .register-link {
+    font-size: 25px;
+  }
+
+  .fa-user-circle, .fa-sign-out-alt {
+    font-size: 35px;
+    padding: 15px;
+  }
+}
+
+
+@media screen and (min-width: 765px) {
+  .navigation {
+    display: flex;
+  }
+
+  .header h1 {
+    margin-top: 125px;
+    font-size: 85px;
+  }
+
+  .navigation, .register-link {
+    font-size: 38px;
+    text-decoration: none;
+  }
+
+  .fa-user-circle, .fa-sign-out-alt {
+    font-size: 45px;
+    padding: 15px;
+  }
+
+}
+
+@media screen and (min-width: 1000px) { 
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header-logged-out a {
+    float: right;
+    padding-right: 24px;
+  }
+
+  .header h1 {
+    margin-top: 160px;
+    font-size: 100px;
+  }
+
+  .navigation, .register-link {
+    font-size: 38px;
+    text-decoration: none;
+  }
+
+  .fa-user-circle {
+    font-size: 60px;
+    padding: 17px;
+    float: left;
+  }
+
+  .fa-sign-out-alt {
+    font-size: 60px;
+    padding: 17px;
+    float: right;
+  }
+
 }

@@ -11,15 +11,14 @@ class Header extends React.Component {
     renderLogoutLink() {
         return (
             <div className='header-logged-in'>
-                <Link to='/' className='title'>Sip and Rate</Link>
                 <Link to='/profilepage' className='homepage'>
-                    <i className="fas fa-home" />
+                <i class="far fa-user-circle" />               
                 </Link>
                 <Link
                     className='logout-link'
                     onClick={this.handleLogoutClick}
                     to='/'>
-                    Logout
+                <span title='Logout'><i class="fas fa-sign-out-alt"/></span>
                 </Link>
             </div>
         )
@@ -28,11 +27,11 @@ class Header extends React.Component {
     renderLoginLink() {
         return (
             <div className='header-logged-out'>
-            <Link to='/' className='title'>Sip and Rate</Link>
             <Link
               className='register-link'
               to='/signup'>
-              Register
+              Register {' '}
+              <i class="fas fa-user-plus" />
             </Link>
           </div>
         )
@@ -46,7 +45,10 @@ class Header extends React.Component {
                     : this.renderLoginLink()}
                 </nav>
                     <header role="banner">
+                        <Link className='banner-link'
+                        to='/'>
                         <h1>Sip and Rate</h1>
+                        </Link>
                     </header>
             </div>
             )
