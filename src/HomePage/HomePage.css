@@ -14,33 +14,27 @@
     background-size: cover;
     font-family: 'Questrial', sans-serif;
   }
-  
-  section {
-    padding: 6% 0;
+
+  .login {
+    width: 90%;
+    margin: auto;
   }
 
   .header-logged-in-profile {
     margin-left: auto;
     margin-right: auto;
-    padding-right: 20px;
-    width: 100%;
-  }
-
-  .header-logged-in-profile a:hover {
-    font-size: 45px;
-    color: #570515;
   }
 
   .logged-in-search {
     font-size: 30px;
     text-shadow: 1px 1px #570515;
     display: block;
-    padding-left: 10px;
   }
 
   .fa-wine-glass-alt{
     color: #570515;
   }
+
 
 
   

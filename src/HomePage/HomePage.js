@@ -8,24 +8,24 @@ import Reviews from '../Reviews/Reviews';
 
 class HomePage extends React.Component {
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
+        TokenService.clearAuthToken() 
     }
 
     renderLoggedInLink() {
         return (
-            <div className='header-logged-in-profile'>
+            <section className='header-logged-in-profile'>
                 <Link to='/searchpage' className='logged-in-search'>Search for beverage<i className="fas fa-wine-glass-alt"></i></Link>
                 <Reviews />
-            </div>
+            </section>
         )
     } 
 
     renderLoginForm() {
         return (
-            <div className='login'>
+            <section className='login'>
             <WelcomePage />
             <LoginForm />
-            </div>
+            </section>
         )
     }
     render() {

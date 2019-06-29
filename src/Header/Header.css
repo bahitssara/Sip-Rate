@@ -16,12 +16,16 @@ nav {
   text-decoration: none;
 }
 
-a:hover {
-  color: #570515;
+.register-link:hover {
+  color: white;
   cursor: pointer;
 }
 
-a:visited {
+.fa-user-plus:hover {
+  color: #570515;
+}
+
+.register-link:visited {
   color: #570515;
 }
 
@@ -87,31 +91,27 @@ a:visited {
   }
 
   .header h1 {
-    margin-top: 160px;
-    font-size: 118px;
+    margin-top: 130px;
+    font-size: 80px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-shadow: 5px 4px #570515;
   }
 
   .navigation, .register-link {
-    font-size: 38px;
+    font-size: 30px;
     text-decoration: none;
   }
 
   .fa-user-circle {
-    font-size: 60px;
-    padding: 17px;
+    font-size: 35px;
+    padding: 10px;
     float: left;
   }
 
   .fa-sign-out-alt {
-    font-size: 60px;
-    padding: 17px;
+    font-size: 35px;
+    padding: 10px;
     float: right;
-  }
-
-  .header h1 {
-    margin-top: 100px;
-    font-family: 'Oswald', sans-serif;
-    color: white;
-    text-shadow: 5px 4px #570515;
   }
 }

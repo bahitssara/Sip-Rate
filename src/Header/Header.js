@@ -12,7 +12,7 @@ class Header extends React.Component {
         return (
             <div className='header-logged-in'>
                 <Link to='/profilepage' className='homepage'>
-                <i class="far fa-user-circle" />               
+                <i className="far fa-user-circle" />               
                 </Link>
                 <Link
                     className='logout-link'
