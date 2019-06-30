@@ -1,65 +1,91 @@
-.sign-up-legend {
-  font-size: 2em;
-  text-shadow: 1px 2px #570515;
+.sign-up-main {
+  width: 75%;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
 .sign-up-fieldset {
-  border: 2px solid #570515;
-  text-shadow: 1px 2px #570515;
+  border: none;
+  background-color: rgba(87,5,21,0.65);
+  border-radius: 5px;
 }
 
-.sign-up-description {
-  font-size: 1.8em;
-  text-shadow: 1px 1px 1px #570515;
+.sign-up-main input {
+  font-family: 'Questrial', sans-serif;
+  box-shadow: 1px 1px #570515;
+  border-radius: 4px;
+  color: black;
 }
 
 .sign-up-button {
+  font-family: 'Questrial', sans-serif;
   display:block;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 4px;
-  height:40px;
-  width: 10em;
-  font-size: 15px;
+  background-color:white;
   color: black;
 }
 
 .sign-up-main label {
-  font-size: 1.4em;
-  text-shadow: 1px 1px #570515;
-}
+  text-shadow: 2px 2px #570515;
+  padding: 10px;
 
-.sign-up-main input {
-  width: 15em;
-  height:2.5em;
-  padding-bottom: 20px;  
-  box-shadow: 1px 1px #570515;
-  border-radius: 4px;
-  color: black;
-  font-size: 20px;
 }
 
 ul {
-  font-size: .8em;
+  font-size: 15px;
   list-style-type: none;
 } 
 
 @media screen and (min-width: 320px) {
-  .sign-up-main {
-    padding: 10px;
+  .signup-page h3 {
+    font-size: 25px;
+  }
+
+  .sign-up-main label {
+    font-size: 25px;
+  }
+
+  .sign-up-main input {
+    width: 240px;
+    height:40px;
+    font-size: 20px;
+  }
+
+  .sign-up-button {
+    height:40px;
+    width: 150px;
+    font-size: 15px;
   }
 }
 
 @media screen and (min-width: 765px) {
-  .sign-up-main {
-    width: 75%;
-    margin: auto;
+  .signup-page h3 {
+    font-size: 30px;
+  }
+
+  .sign-up-main label {
+    font-size: 30px;
+  }
+
+  .sign-up-main input {
+    width: 275px;
+    height:45px;
+    font-size: 23px;
+  }
+
+  .sign-up-button {
+    height:45px;
+    width: 175px;
+    font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1000px) { 
-  .sign-up-main {
-    width: 75%;
-    margin: auto;
+  .sign-up-main input {
+    width: 300px;
+    height:45px;
+    font-size: 25px;
   }
 }

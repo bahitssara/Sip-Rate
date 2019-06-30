@@ -1,38 +1,111 @@
 textarea {
   display:block;
   margin: auto;
-  width: 200px;
-  height: 75px;
   color: black;
+  resize: none;
+  font-family: 'Questrial', sans-serif;
 }
-  
-.add-review-button {
-  display: block;
-  margin: auto; 
-}  
 
 .add-review-button {
+  color: black;
+  background-color: white;
+  display: block;
+  margin: auto; 
   margin-top: 10px;
   border-radius: 4px;
-  height:40px;
-  width: 6em;
-  font-size: 15px;
   color: black;
+  font-family: 'Questrial', sans-serif;
+}
+
+.add-review-button:hover {
+  color: white;
+  background-color: #570515;
 }
 
 .review-page fieldset {
   border: 2px solid #570515;
   text-shadow: 1px 2px #570515;
-  padding: 20px;
-  margin: 15px;
 }
 
-.field label {
-  font-size: 30px;
+.field select {
+  border: 3px #570515 solid;
+  font-family: 'Questrial', sans-serif;
+  background-color: rgba(87,5,21,0.65);
 }
 
-.field input {
-  height: 25px;
-  width: 200px;
-  color: black;
+@media screen and (min-width: 320px) {
+  .field label {
+    font-size: 30px;
+  }
+
+  textarea {
+    width: 225px;
+    height: 100px;
+    font-size: 18px;
+  }
+
+  .field select {
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .review-page fieldset {
+    margin: 30px;
+  }
+
+  .add-review-button {
+    height:40px;
+    width: 100px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 765px) {
+  .field label {
+    font-size: 35px;
+  }
+
+  textarea {
+    width: 250px;
+    font-size: 20px;
+  }
+
+  .review-page fieldset {
+    margin: 40px;
+  }
+
+  .field select {
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .add-review-button {
+    height:40px;
+    width: 120px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1000px) { 
+  .field label {
+    font-size: 40px;
+  }
+
+  textarea {
+    width: 275px;
+    height: 125px;
+    font-size: 24px;
+  }
+  .review-page fieldset {
+    margin: 100px;
+  }
+
+  .add-review-button {
+    height:45px;
+    width: 130px;
+    font-size: 18px;
+    margin-top: 15px;
+  }
 }

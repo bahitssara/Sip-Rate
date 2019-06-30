@@ -1,11 +1,4 @@
-.search-label {
-  font-size: 1.5em;
-  text-shadow: 1px 1px black;
-}
-
 .search-input-form input {
-  width: 24em;
-  height:3.2em;
   border-radius: 5px;
   margin-bottom: 20px;   
   color: black;
@@ -14,44 +7,111 @@
 .search-button {
   margin-top: 10px;
   border-radius: 4px;
-  height:35px;
-  width: 4em;
-  font-size: 20px;
+  background-color: white;
   display: block;
   margin: auto;
   color:black;
+  font-family: 'Questrial', sans-serif;
 }
 
-.search-results {
-  margin-top: 50px;
+.search-button:hover {
+  background-color: #570515;
+  color:white;
 }
 
 .results-li {
   list-style-type: none;
   padding-left: 0;
 }
-.results-li h3 {
-  font-size: 25px;
-  color: white;
-}
+
 .search-li-item {
   border: 1px;
   border-radius: 3px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   background-color: rgba(87,5,21,0.65);
   color: white;
 } 
 
 .beverage-link {
-  font-size: 25px;
   text-shadow: 1px 1px #570515;
   color: white;
 }
 
 .search-results a:hover {
-  font-size: 30px;
   text-shadow: 2px 2px #570515;
 }
 
-.bev_type {
-  font-size: 18px;
+
+@media screen and (min-width: 320px) {
+  .search-input-form input {
+    width: 300px;
+    height:45px;
+    font-size: 20px;
+  }
+
+  .search-button {
+    height:40px;
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .search-results {
+    margin: 30px;
+  }
+
+  .beverage-link {
+    font-size: 25px;
+  }
+
+  .bev_type, .bev_description {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 765px) {
+  .search-input-form input {
+    width: 350px;
+    height:45px;
+    font-size: 23px;
+  }
+
+  .search-button {
+    height:45px;
+    width: 150px;
+    font-size: 25px;
+  }
+
+  .search-results {
+    margin: 35px;
+  }
+
+  .beverage-link {
+    font-size: 30px;
+  }
+
+  .bev_type, .bev_description {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1000px) { 
+  .search-input-form input {
+    width: 350px;
+    height:45px;
+    font-size: 23px;
+  }
+
+  .search-results {
+    margin: 100px;
+  }
+
+  .beverage-link {
+    font-size: 35px;
+  }
+  
+  .bev_type, .bev_description {
+    font-size: 30px;
+  }
+
 }

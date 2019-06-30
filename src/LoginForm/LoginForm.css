@@ -22,6 +22,7 @@ label {
   height:40px;
   width: 135px;
   font-size: 20px;
+  font-family: 'Questrial', sans-serif;
 }
 
 .sign-in-button:hover{

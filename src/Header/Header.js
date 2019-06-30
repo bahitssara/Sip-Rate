@@ -14,6 +14,7 @@ class Header extends React.Component {
                 <Link to='/profilepage' className='profile-link'>
                 <i className="far fa-user-circle" />               
                 </Link>
+                <Link to='/searchpage'><i className="fas fa-search-plus" /></Link>
                 <Link
                     className='logout-link'
                     onClick={this.handleLogoutClick}

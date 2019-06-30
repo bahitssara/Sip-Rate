@@ -1,13 +1,9 @@
 import React from 'react';
 import './AddReview.css';
 
-function AddReview (props) {
+function AddReview (props) { 
     return (
         <section className='review-page'>
-            <div className='add-review-description'>
-                <h3>Add your review here!</h3>
-            </div>
-            <div>
                 <form className='add-review-form' onSubmit={(e) => props.onAddReview(e)}>
                     <fieldset>
                         <legend>Review</legend>
@@ -31,6 +27,7 @@ function AddReview (props) {
                                 name='rating'
                                 aria-label='Rate your bev!'
                             >
+                                <option>How many stars?</option>
                                 <option value='1' >1</option>
                                 <option value='2' >2</option>
                                 <option value='3' >3</option>
@@ -41,7 +38,6 @@ function AddReview (props) {
                         <button type='submit' className='add-review-button'>Submit Review</button>
                     </fieldset>
                 </form>
-            </div>
         </section>
     )}
 

@@ -30,11 +30,11 @@ class ProfilePage extends React.Component {
                 console.error({ err }))
     };
 
+ 
     render() {
         const { reviews = [] } = this.state;
         return (
-            <section className='profile-page'>
-                <div className='user-reviews-main'>
+            <section className='user-reviews-profile'>
                     <h2>Your Posted Reviews:</h2>
                     {reviews.map(review =>
                         <ReviewFormat
@@ -46,7 +46,6 @@ class ProfilePage extends React.Component {
                             rating={review.rating}
                         />
                     )}
-                </div>
             </section>
         )
     }

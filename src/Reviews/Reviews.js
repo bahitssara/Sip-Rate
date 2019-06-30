@@ -1,8 +1,7 @@
 import React from 'react';
 import './Reviews.css';
 import SipRateContext from '../SipRateContext';
-import StarRating from '../StarRating/StarRating';
-import { format } from 'date-fns'
+import ReviewFormat from '../ReviewFormat/ReviewFormat';
 
 class Reviews extends React.Component {
 
@@ -11,21 +10,18 @@ class Reviews extends React.Component {
     render() {
         const { reviews=[] } = this.context;
         return(
-            <section className='profile-page'>
-                <div className='user-posted-reviews'>
-                    <h2>Browse posted reviews</h2>
-                    <ul className='all-reviews-list'>
+            <section className='reviews-page'>
+                    <h2>Browse posted reviews:</h2>
                     {reviews.map(review => 
-                         <li key={review.id} className='user-li-item'>
-                         <h4>{review.bev_name}</h4>
-                         <p>{review.bev_type}</p>
-                         <p>{review.user_review}</p>
-                         <span className='date-created'>Posted: {format(review.date_created, 'MM/DD/YYYY')}</span>
-                         <StarRating value={review.rating} />
-                         </li>                       
+                         <ReviewFormat 
+                         key={review.id}
+                         id={review.id}
+                         bev_name={review.bev_name}
+                         user_review={review.user_review}
+                         date_created={review.date_created}
+                         rating={review.rating}
+                         />
                     )}
-                    </ul>
-                </div>
             </section>
         )
     }

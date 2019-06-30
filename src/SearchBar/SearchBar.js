@@ -85,15 +85,14 @@ class SearchBar extends React.Component {
     }
 
     render() {
-        return (
-            <div className='search'>
+        return ( 
+            <section className='search'>
                 <form className='search-input-form' onSubmit={e => this.updateState(e)}>
                     <input type='text' name='search_input' id='search_input' ref={input => (this.input = input)} />
                     <button type='submit' className='search-button' >Search</button>
                 </form>
                 <div className="search-results">
                     <ul className='results-li'>
-                        <h3>Click on your wine choice to add a review</h3>
                         {this.state.searchResults.map(beverage =>
                             <li className='search-li-item' key={beverage.code}>
                                 <a href={beverage.link} className='beverage-link' rel='noopener noreferrer' target='_blank'>{beverage.name}</a>
@@ -113,7 +112,7 @@ class SearchBar extends React.Component {
                         
                     </ul>
                 </div>
-            </div>
+            </section>
         )
     }
 }

@@ -12,12 +12,14 @@ class ReviewFormat extends React.Component {
 
     static contextType = SipRateContext
 
+    
     renderDeleteButton() {
         if (TokenService.hasAuthToken()) {
             return (
                 <button className='delete-review-button' onClick={this.handleClickDelete}>Delete</button>
             )
         }
+
     }
 
     handleClickDelete = e => {

@@ -1,15 +1,10 @@
  .user-reviews-main {
     margin: auto;
  }
-   
- .user-reviews {
-   list-style-type: none;
-   border: 1px grey solid;
-   margin: auto;
- }
  
  .user-reviews-list {
    list-style-type: none;
+   padding-left: 0;
    border: 1px;
    border-radius: 3px;
    margin: 10px;
@@ -17,15 +12,75 @@
    color: white;
  }
  
- .user-li-item h4{
+ .user-review-item h4{
    font-size: 20px;
    text-shadow: 1px 2px #570515;
  }
  
- .edit-review-button {
-   color: black;
- }
- 
  .delete-review-button {
+   font-family: 'Questrial', sans-serif;
+   background-color: white;
+   border-radius: 2px;
+   font-size: 15px;
    color: black;
+   margin: 10px;
  }
+
+ .delete-review-button:hover {
+  background-color: #570515;
+  color: white;
+ }
+
+
+@media screen and (min-width: 320px) {
+  .delete-review-button {
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 765px) {
+  .user-reviews-list {
+    margin: 25px;
+  }
+
+  .user-review-item h4{
+    font-size: 25px;
+    text-shadow: 1px 2px #570515;
+  }
+
+  .user-review-item p{
+    font-size: 20px;
+  }
+
+  .date-created {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) { 
+  .user-reviews-list {
+    margin: 40px;
+  }
+
+  .user-review-item h4{
+    font-size: 30px;
+    text-shadow: 1px 2px #570515;
+  }
+  
+  .user-review-item p{
+    font-size: 23px;
+  }
+
+  .date-created {
+    font-size: 23px;
+  }
+
+  .delete-review-button {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+  }
+}

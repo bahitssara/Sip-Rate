@@ -1,6 +1,5 @@
 import React from 'react';
 import './HomePage.css'
-import { Link } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import TokenService from '../services/token-service'
 import WelcomePage from '../WelcomePage/WelcomePage';
@@ -14,7 +13,6 @@ class HomePage extends React.Component {
     renderLoggedInLink() {
         return (
             <section className='header-logged-in-profile'>
-                <Link to='/searchpage' className='logged-in-search'>Search for beverage<i className="fas fa-wine-glass-alt"></i></Link>
                 <Reviews />
             </section>
         )

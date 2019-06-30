@@ -1,5 +1,17 @@
 .search-page-header {
-  font-size: 2em;
   color: white;
   text-shadow: 1px 2px 3px #570515;
+}
+
+@media screen and (min-width: 320px) {
+  .search-page-header {
+    font-size: 27px;
+  }
+  
+}
+
+@media screen and (min-width: 765px) {
+  .search-page-header {
+    font-size: 35px;
+  }
 }

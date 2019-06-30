@@ -16,8 +16,8 @@ nav {
   text-decoration: none;
 }
 
-.register-link:hover {
-  color: white;
+.fa-user-plus:hover {
+  color: #570515;
   cursor: pointer;
 }
 
@@ -30,6 +30,10 @@ nav {
 }
 
 .register-link:visited {
+  color: #570515;
+}
+
+.fa-search-plus:hover {
   color: #570515;
 }
 
@@ -57,7 +61,7 @@ nav {
     font-size: 25px;
   }
 
-  .fa-user-circle, .fa-sign-out-alt {
+  .fa-user-circle, .fa-sign-out-alt, .fa-search-plus {
     font-size: 35px;
     padding: 15px;
   }
@@ -80,9 +84,22 @@ nav {
     text-decoration: none;
   }
 
-  .fa-user-circle, .fa-sign-out-alt {
-    font-size: 45px;
-    padding: 15px;
+  .fa-user-circle {
+    font-size: 35px;
+    padding: 10px;
+    float: left;
+  }
+
+  .fa-sign-out-alt {
+    font-size: 35px;
+    padding: 10px;
+    float: right;
+  }
+
+  .fa-search-plus{
+    font-size: 35px;
+    padding: 10px;
+    float: left;
   }
 }
 
@@ -120,5 +137,11 @@ nav {
     font-size: 35px;
     padding: 10px;
     float: right;
+  }
+
+  .fa-search-plus{
+    font-size: 35px;
+    padding: 10px;
+    float: left;
   }
 }
