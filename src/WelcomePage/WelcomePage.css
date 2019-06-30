@@ -1,19 +1,44 @@
+.description {
+  background-color: rgba(76,97,61,0.65);
+  border-radius: 5px;
+}
+
+.description h2, h3 {
+  text-shadow:.5px .3px white;
+  color: #570515;
+}
+
+.description p {
+  text-shadow: 1px .4px #570515;
+}
+
+.signup-link:hover {
+  color: #570515;
+}
+
 @media screen and (min-width: 320px) {
-  .description {
-    text-shadow: 1px 2px #251e1e;
+  .description h2 {
+    font-size: 30px;
+  }
+
+  .description p {
+    font-size: 20px;
+    padding: 5px;
   }
 }
 
 @media screen and (min-width: 765px) {
+  .description h2 {
+    font-size: 32px;
+  }
   .description {
     width: 50%;
     float: right;
-    text-shadow: 1px 1px #251e1e;
-    margin-left: 15px;
+    margin-left: 35px;
   }
   .description p {
-    font-size: 25px;
-    text-shadow: 1px 3px #251e1e;
+    font-size: 23px;
+    padding: 5px;
   }
 }
 
@@ -27,6 +52,5 @@
 
   .description p {
     font-size: 25px;
-    text-shadow: 1px 3px #251e1e;
   }
 }

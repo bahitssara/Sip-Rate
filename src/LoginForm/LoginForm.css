@@ -39,25 +39,30 @@ label {
   color: white;
 } 
 
+.demo-login-info p {
+  color: white;
+}
+
 
 @media screen and (min-width: 320px) {
   .sign-in-main {
     width: 90%;
     margin: auto;
+    margin-bottom: 20px;
   }
 
   .sign-in-main h1 {
-    font-size: 37px;
+    font-size: 34px;
     text-decoration: underline;
   }
 
   .sign-in-email, .sign-in-password {
-    font-size: 33px;
+    font-size: 30px;
     text-shadow: 1px 1px black;
   }
 
   .sign-in-main input {
-    width: 55%;
+    width: 75%;
     height: 40px;
     font-size: 15px;
     margin: 12px;
@@ -72,26 +77,28 @@ label {
   .sign-in-main {
     width: 98%;
     margin: auto;
+    margin-bottom: 20px;
   }
 
   .sign-in-main h1 {
-    font-size: 45px;
+    font-size: 40px;
     text-decoration: underline;
   }
 
   .sign-in-email, .sign-in-password {
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: 2px 2px #570515;
   }
 
   .sign-in-main input {
     height:50px;
+    width: 85%;
     font-size: 27px;
     margin: 12px;
   }
 
   .demo-login-info {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .sign-in-button {

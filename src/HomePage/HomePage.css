@@ -1,8 +1,7 @@
 * {
     box-sizing: border-box;
     color: white;
-  }
-  
+  } 
   body {
     font-size: 20px;
     text-align: center;
@@ -16,7 +15,7 @@
   }
 
   .login {
-    width: 90%;
+    width: 95%;
     margin: auto;
   }
 

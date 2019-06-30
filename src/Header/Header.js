@@ -11,7 +11,7 @@ class Header extends React.Component {
     renderLogoutLink() {
         return (
             <div className='header-logged-in'>
-                <Link to='/profilepage' className='homepage'>
+                <Link to='/profilepage' className='profile-link'>
                 <i className="far fa-user-circle" />               
                 </Link>
                 <Link

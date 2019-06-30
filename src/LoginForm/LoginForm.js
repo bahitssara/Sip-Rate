@@ -129,7 +129,7 @@ class LoginForm extends React.Component {
                             hasError={!this.state.emailValid} message={this.state.validationMessages.email}/>
                             <label htmlFor='password' className='sign-in-password'>Password</label>
                                 <input 
-                                    type='text' 
+                                    type='password' 
                                     name='password' 
                                     id='password-input' 
                                     value={this.state.password} 
