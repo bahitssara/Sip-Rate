@@ -8,14 +8,26 @@
    border: 1px;
    border-radius: 3px;
    margin: 10px;
-   background-color: rgba(87,5,21,0.65);
-   color: white;
+   background-color: rgba(229,248,255,0.8);
+   color: #0E2944;
+;
  }
  
  .user-review-item h4{
+   color: #0E2944;
    font-size: 20px;
-   text-shadow: 1px 2px #570515;
  }
+
+.user-review-item p{
+  color: #0E2944;
+  font-size: 20px;
+
+}
+
+.date-created {
+  color: #0E2944;
+  font-size: 20px;
+}
  
  .delete-review-button {
    font-family: 'Questrial', sans-serif;
@@ -48,7 +60,6 @@
 
   .user-review-item h4{
     font-size: 25px;
-    text-shadow: 1px 2px #570515;
   }
 
   .user-review-item p{
@@ -67,7 +78,6 @@
 
   .user-review-item h4{
     font-size: 30px;
-    text-shadow: 1px 2px #570515;
   }
   
   .user-review-item p{

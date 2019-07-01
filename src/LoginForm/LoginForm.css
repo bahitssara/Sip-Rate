@@ -4,12 +4,12 @@ label {
 
 .login-fieldset {
   border: none;
-  background-color: rgba(87,5,21,0.65);
+  background-color: rgba(229,248,255,0.8);
   border-radius: 5px;
 }
 
 .sign-in-legend {
-  text-shadow: 1px 3px #570515;
+  text-shadow: 1px 3px #0E2944;
 }
 
 .sign-in-button {
@@ -26,7 +26,7 @@ label {
 }
 
 .sign-in-button:hover{
-  background-color: #570515;
+  background-color: #0E2944;
   color: white;
 }
 
@@ -41,12 +41,15 @@ label {
 } 
 
 .error p {
-  text-shadow: 1px 2px #570515;
+  text-shadow: 1px 2px white;
 }
 
-.demo-login-info p {
-  color: white;
+.demo-login-info h4, p {
+  color: #0E2944;
+}
 
+.validation-error {
+  color: #0E2944;
 }
 
 
@@ -64,7 +67,7 @@ label {
 
   .sign-in-email, .sign-in-password {
     font-size: 30px;
-    text-shadow: 1px 1px black;
+    text-shadow: 2px 2px #0E2944;
   }
 
   .sign-in-main input {
@@ -93,7 +96,7 @@ label {
 
   .sign-in-email, .sign-in-password {
     font-size: 30px;
-    text-shadow: 2px 2px #570515;
+    text-shadow: 2px 2px #0E2944;
   }
 
   .sign-in-main input {
@@ -127,7 +130,7 @@ label {
 
   .sign-in-email, .sign-in-password {
     font-size: 30px;
-    text-shadow: 2px 2px #570515;
+    text-shadow: 2px 2px #0E2944;
   }
 
   .sign-in-main input {

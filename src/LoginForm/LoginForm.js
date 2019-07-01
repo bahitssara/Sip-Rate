@@ -135,7 +135,7 @@ class LoginForm extends React.Component {
                                     value={this.state.password} 
                                     onChange={e => this.addPassword(e.target.value)}
                                 />
-                             <ValidationError className='validation-error' hasError={!this.state.passwordValid} message={this.state.validationMessages.password}/>
+                             <ValidationError hasError={!this.state.passwordValid} message={this.state.validationMessages.password}/>
                                 <div className="error" role="alert">
                                     {error && <span className="login-error">{error}</span>}
                                     <p>*Email/Password are case sensitive</p>

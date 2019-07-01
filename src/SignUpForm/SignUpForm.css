@@ -4,15 +4,19 @@
   margin-bottom: 30px;
 }
 
+.signup-page h3 {
+  color: white;
+  text-shadow: 1px 2px #0E2944;
+}
+
 .sign-up-fieldset {
   border: none;
-  background-color: rgba(87,5,21,0.65);
+  background-color: rgba(229,248,255,0.9);
   border-radius: 5px;
 }
 
 .sign-up-main input {
   font-family: 'Questrial', sans-serif;
-  box-shadow: 1px 1px #570515;
   border-radius: 4px;
   color: black;
 }
@@ -28,16 +32,22 @@
 }
 
 .sign-up-main label {
-  text-shadow: 2px 2px #570515;
+  color: #0E2944;
   padding: 10px;
 
 }
 .signup-error{
   color:red;
 }
+
 ul {
-  font-size: 15px;
   list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  font-size: 15px;
+  color: #0E2944;
 } 
 
 @media screen and (min-width: 320px) {

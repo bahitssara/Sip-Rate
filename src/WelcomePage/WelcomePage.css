@@ -1,19 +1,16 @@
 .description {
-  background-color: rgba(76,97,61,0.65);
+  background-color: rgba(229,248,255,0.7);
   border-radius: 5px;
 }
 
-.description h2, h3 {
-  text-shadow:.5px .3px white;
-  color: #570515;
-}
+.description h2, h3, p {
+  text-shadow: 1px 1px white;
+  color:#0E2944;
 
-.description p {
-  text-shadow: 1px .4px #570515;
 }
 
 .signup-link:hover {
-  color: #570515;
+  color: #D27B81;
 }
 
 @media screen and (min-width: 320px) {
