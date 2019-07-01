@@ -37,11 +37,16 @@ label {
 }
 
 .login-error {
-  color: white;
+  color: red;
 } 
+
+.error p {
+  text-shadow: 1px 2px #570515;
+}
 
 .demo-login-info p {
   color: white;
+
 }
 
 

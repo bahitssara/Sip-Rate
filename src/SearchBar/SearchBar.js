@@ -34,9 +34,11 @@ class SearchBar extends React.Component {
         this.handleSearch(value)
     }
 
+
     handleSearch(query) {
         const wineApi = `/beverages-api-data/${query}`;
-        const url = config.API_ENDPOINT + `${wineApi}`
+        const str = config.API_ENDPOINT + `${wineApi}`;
+        const url = str.replace(/ /g, '+')
         fetch(url, {
             method: 'GET',
             headers: {

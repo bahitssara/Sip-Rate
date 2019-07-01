@@ -12,9 +12,11 @@ class Header extends React.Component {
         return (
             <div className='header-logged-in'>
                 <Link to='/profilepage' className='profile-link'>
-                <i className="far fa-user-circle" />               
+                <span title='Your Reviews'><i className="far fa-user-circle" /></span>           
                 </Link>
-                <Link to='/searchpage'><i className="fas fa-search-plus" /></Link>
+                <Link to='/searchpage'>
+                <span title='Search'><i className="fas fa-search-plus" /></span>
+                </Link>
                 <Link
                     className='logout-link'
                     onClick={this.handleLogoutClick}

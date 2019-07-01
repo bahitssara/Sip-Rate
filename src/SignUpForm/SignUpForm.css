@@ -32,7 +32,9 @@
   padding: 10px;
 
 }
-
+.signup-error{
+  color:red;
+}
 ul {
   font-size: 15px;
   list-style-type: none;

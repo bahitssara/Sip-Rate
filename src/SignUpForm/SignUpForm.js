@@ -34,7 +34,7 @@ class SignUpForm extends React.Component {
         this.setState({ error: null })
             AuthApiService.postUser({
                 first_name: first_name.value,
-                last_name: first_name.value,
+                last_name: last_name.value,
                 email: email.value,
                 password: password.value,
             })
@@ -207,7 +207,7 @@ class SignUpForm extends React.Component {
                              />
                             <ValidationError hasError={!this.state.passwordValid} message={this.state.validationMessages.password}/>
                             <div className="error" role="alert">
-                                    {error && <span className="login-error">{error}</span>}
+                                    {error && <span className="signup-error">{error}</span>}
                             </div>
                             <button className='sign-up-button'>Create Account</button>
                             <ul>
