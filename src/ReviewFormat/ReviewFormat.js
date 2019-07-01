@@ -13,14 +13,13 @@ class ReviewFormat extends React.Component {
     static contextType = SipRateContext
 
     
-    // renderDeleteButton() {
-    //     if (TokenService.hasAuthToken()) {
-    //         return (
-    //             <button className='delete-review-button' onClick={this.handleClickDelete}>Delete</button>
-    //         )
-    //     }
-
-    // }
+    renderDeleteButton() {
+        if (TokenService.hasAuthToken()) {
+            return (
+                <button className='delete-review-button' onClick={this.handleClickDelete}>Delete</button>
+            )
+        }
+    }
 
     handleClickDelete = e => {
         e.preventDefault();
@@ -55,7 +54,7 @@ class ReviewFormat extends React.Component {
                         <p>{user_review}</p>
                         <span className='date-created'>Posted: {format(date_created, 'MM/DD/YYYY')}</span>
                         <StarRating value={rating} />
-                        {/* {this.renderDeleteButton()} */}
+                        {this.renderDeleteButton()}
                     </li>
             </ul>
         )

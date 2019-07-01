@@ -47,7 +47,7 @@ class Header extends React.Component {
                     ? this.renderLogoutLink()
                     : this.renderLoginLink()}
                 </nav>
-                    <header role="banner">
+                    <header>
                         <Link className='banner-link'
                         to='/'>
                         <h1>Sip and Rate</h1>

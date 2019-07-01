@@ -7,13 +7,12 @@ textarea {
 }
 
 .add-review-button {
-  color: black;
   background-color: white;
   display: block;
   margin: auto; 
   margin-top: 10px;
   border-radius: 4px;
-  color: black;
+  color: #0E2944;
   font-family: 'Questrial', sans-serif;
 }
 

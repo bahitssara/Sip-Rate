@@ -1,16 +1,24 @@
 .description {
-  background-color: rgba(229,248,255,0.7);
+  background-color: rgba(229,248,255,0.8);
   border-radius: 5px;
 }
 
 .description h2, h3, p {
   text-shadow: 1px 1px white;
   color:#0E2944;
+}
 
+.fa-beer, .fa-wine-glass-alt {
+  font-size: 40px;
+  text-shadow: 2px 2px #0E2944;
+}
+
+.signup-link {
+  color: #D27B81;
 }
 
 .signup-link:hover {
-  color: #D27B81;
+  color: white;
 }
 
 @media screen and (min-width: 320px) {
@@ -21,6 +29,10 @@
   .description p {
     font-size: 20px;
     padding: 5px;
+  }
+
+  .review-page legend {
+    font-size: 20px;
   }
 }
 

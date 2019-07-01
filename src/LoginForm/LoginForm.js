@@ -117,7 +117,7 @@ class LoginForm extends React.Component {
                 <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
                     <fieldset className='login-fieldset'>
                         <h1 className='sign-in-legend'>Sign In</h1>
-                            <label htmlFor='email' className='sign-in-email'>Email</label>
+                            <label htmlFor='email-input' className='sign-in-email'>Email</label>
                                 <input 
                                     type='text' 
                                     name='email' 
@@ -127,7 +127,7 @@ class LoginForm extends React.Component {
                                 />
                             <ValidationError className='validation-error'
                             hasError={!this.state.emailValid} message={this.state.validationMessages.email}/>
-                            <label htmlFor='password' className='sign-in-password'>Password</label>
+                            <label htmlFor='password-input' className='sign-in-password'>Password</label>
                                 <input 
                                     type='password' 
                                     name='password' 
@@ -142,7 +142,7 @@ class LoginForm extends React.Component {
                                 </div>
                             <button className='sign-in-button'>Sign In</button>
                             <section className='demo-login-info'>
-                            <h4>Demo login info:</h4>
+                            <h2>Demo login info:</h2>
                             <p>Email: testuser101@email.com</p>
                             <p>Password: Testuser101!</p>
                             </section>

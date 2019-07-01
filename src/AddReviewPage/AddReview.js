@@ -6,7 +6,7 @@ function AddReview (props) {
         <section className='review-page'>
                 <form className='add-review-form' onSubmit={(e) => props.onAddReview(e)}>
                     <fieldset>
-                        <legend>Review</legend>
+                        <legend>Add Review</legend>
                         <div className='field'>
                             <input type='hidden' id='bev_id' name='bev_id' value={props.bev_id} />
                             <input type='hidden' id='bev_name' name='bev_name' value={props.bev_name} />

@@ -28,7 +28,12 @@
   margin-top: 20px;
   border-radius: 4px;
   background-color:white;
-  color: black;
+  color: #0E2944;
+}
+
+.sign-up-button:hover {
+  background-color: #0E2944;
+  color:white;
 }
 
 .sign-up-main label {

@@ -10,7 +10,6 @@
    margin: 10px;
    background-color: rgba(229,248,255,0.8);
    color: #0E2944;
-;
  }
  
  .user-review-item h4{
@@ -19,9 +18,11 @@
  }
 
 .user-review-item p{
+  padding-left: 5px;
+  padding-right: 5px;
   color: #0E2944;
+  text-shadow: none;
   font-size: 20px;
-
 }
 
 .date-created {
@@ -34,12 +35,12 @@
    background-color: white;
    border-radius: 2px;
    font-size: 15px;
-   color: black;
+   color: #0E2944;
    margin: 10px;
  }
 
  .delete-review-button:hover {
-  background-color: #570515;
+  background-color: #0E2944;
   color: white;
  }
 

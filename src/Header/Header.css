@@ -17,11 +17,19 @@ nav {
 }
 
 .register-link {
-  text-shadow: 1px 2px 3px #0E2944;
+  color: #0E2944;
+}
+
+.fa-user-plus {
+  color: #0E2944;
+}
+
+.register-link:hover {
+  color: white;
 }
 
 .fa-user-plus:hover {
-  color: #0E2944;
+  color: white;
   cursor: pointer;
 }
 
@@ -37,7 +45,7 @@ nav {
   color: #0E2944;
 }
 
-.header h1 {
+header h1 {
   font-family: 'Oswald', sans-serif;
   color: white;
 }
@@ -86,18 +94,21 @@ nav {
   }
 
   .fa-user-circle {
+    color: #0E2944;
     font-size: 35px;
     padding: 10px;
     float: left;
   }
 
   .fa-sign-out-alt {
+    color: #0E2944;
     font-size: 35px;
     padding: 10px;
     float: right;
   }
 
   .fa-search-plus{
+    color: #0E2944;
     font-size: 35px;
     padding: 10px;
     float: left;

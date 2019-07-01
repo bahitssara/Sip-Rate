@@ -16,7 +16,7 @@ label {
   display: block;
   margin: auto;
   background-color: white;
-  color: black;
+  color: #0E2944;
   margin-top: 10px;
   border-radius: 4px;
   height:40px;
@@ -44,7 +44,7 @@ label {
   text-shadow: 1px 2px white;
 }
 
-.demo-login-info h4, p {
+.demo-login-info h2, p {
   color: #0E2944;
 }
 
