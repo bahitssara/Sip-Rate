@@ -9,17 +9,17 @@ import { format } from 'date-fns'
 
 
 class ReviewFormat extends React.Component {
-
     static contextType = SipRateContext
 
     
     renderDeleteButton() {
-        if (TokenService.hasAuthToken()) {
+        if (TokenService.getAuthToken()) {
             return (
                 <button className='delete-review-button' onClick={this.handleClickDelete}>Delete</button>
             )
         }
     }
+
 
     handleClickDelete = e => {
         e.preventDefault();
@@ -47,6 +47,7 @@ class ReviewFormat extends React.Component {
     render() {
         const { id, bev_name, bev_type, user_review, rating, date_created } = this.props;
         return (
+
             <ul className='user-reviews-list'>
                     <li key={id} className='user-review-item'>
                         <h4>{bev_name}</h4>

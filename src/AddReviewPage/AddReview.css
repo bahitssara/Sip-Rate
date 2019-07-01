@@ -23,7 +23,11 @@ textarea {
 
 .review-page fieldset {
   border: 2px solid #0E2944;
-  text-shadow: 1px 2px #0E2944;
+  background-color: rgba(229,248,255,0.9);
+}
+
+.review-page legend, label {
+  color: #0E2944;
 }
 
 .field select {

@@ -8,8 +8,9 @@ label {
   border-radius: 5px;
 }
 
-.sign-in-legend {
-  text-shadow: 1px 3px #0E2944;
+.sign-in-main h1 {
+  color: #0E2944;
+  text-shadow: 1px 1px white;
 }
 
 .sign-in-button {
@@ -67,7 +68,6 @@ label {
 
   .sign-in-email, .sign-in-password {
     font-size: 30px;
-    text-shadow: 2px 2px #0E2944;
   }
 
   .sign-in-main input {
@@ -96,7 +96,6 @@ label {
 
   .sign-in-email, .sign-in-password {
     font-size: 30px;
-    text-shadow: 2px 2px #0E2944;
   }
 
   .sign-in-main input {
@@ -119,6 +118,9 @@ label {
 }
 
 @media screen and (min-width: 1000px) { 
+  .login-fieldset{
+    background-color: rgba(229,248,255,0.9);
+  }
   .sign-in-main {
     margin: 60px;
   }
@@ -130,7 +132,6 @@ label {
 
   .sign-in-email, .sign-in-password {
     font-size: 30px;
-    text-shadow: 2px 2px #0E2944;
   }
 
   .sign-in-main input {

@@ -57,6 +57,8 @@
     float: right;
     margin-top: 50px;
     margin-bottom: 25px;
+    background-color: rgba(229,248,255,0.9);
+
   }
 
   .description p {
