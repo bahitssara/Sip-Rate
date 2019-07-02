@@ -8,7 +8,7 @@ Sip & Rate allows beer and wine lovers to search and rate some of their favorite
 I was inspired to create an app that allows wine and beer lovers to search their favorite or least favorite drinks, and store their thoughts about them all in one place. As a wine lover myself I've found it's easy to have a wine and not remember at all how I felt about it. Then was born Sip & Rate!
 
 ## <u>User-stories, UX Wireframes, Screenshots</u>
-![User stories](images/README/user-stories.png)
+![User stories](images/README/User-stories.png)
 
 #### As a user I want to create an account
 ![Welcome Page](images/README/welcome-page.png)
