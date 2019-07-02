@@ -20,31 +20,31 @@ I was inspired to create an app that allows wine and beer lovers to search their
 
 ### Final App
 #### <center>Mobile view</center>
-Home page
+##### Home page
 ![Mobile home page](images/README/mobile-home-page.png)
-Registration page
+##### Registration page
 ![Registration page](images/README/mobile-registration.png)
-All reviews
+##### All reviews
 ![Mobile all reviews](images/README/mobile-all-reviews.png)
-Search beverages
+##### Search beverages
 ![Mobile search review](images/README/mobile-search-review.png)
-Search results/Add review
+##### Search results/Add review
 ![Mobile search results](images/README/mobile-search-results.png)
-Profile/Your reviews
+##### Profile/Your reviews
 ![Registration page](images/README/mobile-profile.png)
 
-#### Desktop view
-Home page
+#### <Center>Desktop view</center>
+##### Home page
 ![Desktop home page](images/README/desktop-home-page.png)
-Registration page
+##### Registration page
 ![Registration page](images/README/desktop-registration.png)
-All reviews
+##### All reviews
 ![Desktop all reviews](images/README/desktop-all-reviews.png)
-Search beverages
+##### Search beverages
 ![Search beverages](images/README/desktop-search-page.png)
-Search results/Add review
+##### Search results/Add review
 ![Search results](images/README/desktop-search-results.png)
-Profile/Your reviews
+#### Profile/Your reviews
 ![Registration page](images/README/desktop-profile.png)
 ## Summary
 Sip & Rate is an app that allows users to create a simple account, and once logged in can search a wine they've had, and give their thoughts! This app is focused for personal use and aimed at frequent users who return to view all their thoughts! Users can also view all posted reviews, just to see what others may think. This app is the perfect place to keep tabs on all your favorite and least favorite grape beverages!
