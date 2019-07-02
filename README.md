@@ -20,29 +20,29 @@ I was inspired to create an app that allows wine and beer lovers to search their
 
 ### Final App
 #### <center>Mobile view</center>
-##### Home page
+#### Home page
 ![Mobile home page](images/README/mobile-home-page.png)
-##### Registration page
+#### Registration page
 ![Registration page](images/README/mobile-registration.png)
-##### All reviews
+#### All reviews
 ![Mobile all reviews](images/README/mobile-all-reviews.png)
-##### Search beverages
+#### Search beverages
 ![Mobile search review](images/README/mobile-search-review.png)
-##### Search results/Add review
+#### Search results/Add review
 ![Mobile search results](images/README/mobile-search-results.png)
-##### Profile/Your reviews
+#### Profile/Your reviews
 ![Registration page](images/README/mobile-profile.png)
 
 #### <Center>Desktop view</center>
-##### Home page
+#### Home page
 ![Desktop home page](images/README/desktop-home-page.png)
-##### Registration page
+#### Registration page
 ![Registration page](images/README/desktop-registration.png)
-##### All reviews
+#### All reviews
 ![Desktop all reviews](images/README/desktop-all-reviews.png)
-##### Search beverages
+#### Search beverages
 ![Search beverages](images/README/desktop-search-page.png)
-##### Search results/Add review
+#### Search results/Add review
 ![Search results](images/README/desktop-search-results.png)
 #### Profile/Your reviews
 ![Registration page](images/README/desktop-profile.png)
