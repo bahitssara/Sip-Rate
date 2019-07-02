@@ -3,8 +3,8 @@ import './SearchPage.css';
 import SearchBar from '../SearchBar/SearchBar';
 
 class SearchPage extends React.Component {
-    render(){
-        return(
+    render() {
+        return (
             <section className="search-page">
                 <h3 className='search-page-header'>Search here, and add your review!</h3>
                 <SearchBar />
@@ -15,4 +15,3 @@ class SearchPage extends React.Component {
 
 export default SearchPage;
 
- 

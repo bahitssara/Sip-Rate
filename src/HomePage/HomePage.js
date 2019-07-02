@@ -7,7 +7,7 @@ import Reviews from '../Reviews/Reviews';
 
 class HomePage extends React.Component {
     handleLogoutClick = () => {
-        TokenService.clearAuthToken() 
+        TokenService.clearAuthToken()
     }
 
     renderLoggedInLink() {
@@ -16,18 +16,18 @@ class HomePage extends React.Component {
                 <Reviews />
             </section>
         )
-    } 
+    }
 
     renderLoginForm() {
         return (
             <section className='login'>
-            <WelcomePage />
-            <LoginForm />
+                <WelcomePage />
+                <LoginForm />
             </section>
         )
     }
     render() {
-        return(
+        return (
             <section className='home-screen'>
                 {TokenService.hasAuthToken()
                     ? this.renderLoggedInLink()

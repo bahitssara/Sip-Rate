@@ -59,8 +59,8 @@ class SearchBar extends React.Component {
             .catch(error => {
                 console.error({ error })
             })
-    } 
- 
+    }
+
     handleReviewSubmit = ev => {
         ev.preventDefault();
         this.setState({ error: null })
@@ -74,20 +74,20 @@ class SearchBar extends React.Component {
             rating: rating.value,
             user_review: user_review.value
         })
-        .then(() => 
-            bev_id.value='',
-            bev_name.value='',
-            bev_type.value='',
-            rating.value='',
-            user_review.value='',
-        )
-        .catch(res => {
-            this.setState({ error: res.error })
-        })
+            .then(() =>
+                bev_id.value = '',
+                bev_name.value = '',
+                bev_type.value = '',
+                rating.value = '',
+                user_review.value = '',
+            )
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
     }
 
     render() {
-        return ( 
+        return (
             <section className='search'>
                 <form className='search-input-form' onSubmit={e => this.updateState(e)}>
                     <input type='text' name='search_input' id='search_input' ref={input => (this.input = input)} />
@@ -101,17 +101,17 @@ class SearchBar extends React.Component {
                                 <p className='bev_type'>{beverage.type}</p>
                                 <p className='bev_description'>{beverage.varietal}</p>
                                 <StarRating value={beverage.snoothrank} />
-                                <AddReview 
-                                    bev_id={beverage.code} 
-                                    bev_name={beverage.name} 
-                                    bev_type={beverage.type} 
-                                    user_review={this.state.user_review} 
-                                    rating={this.state.rating} 
+                                <AddReview
+                                    bev_id={beverage.code}
+                                    bev_name={beverage.name}
+                                    bev_type={beverage.type}
+                                    user_review={this.state.user_review}
+                                    rating={this.state.rating}
                                     onAddReview={(e) => this.handleReviewSubmit(e)}
-                                    />
+                                />
                             </li>
                         )}
-                        
+
                     </ul>
                 </div>
             </section>

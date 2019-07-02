@@ -30,22 +30,22 @@ class ProfilePage extends React.Component {
                 console.error({ err }))
     };
 
- 
+
     render() {
         const { reviews = [] } = this.state;
         return (
             <section className='user-reviews-profile'>
-                    <h2>Your Posted Reviews:</h2>
-                    {reviews.map(review =>
-                        <ReviewFormat
-                            key={review.id}
-                            id={review.id}
-                            bev_name={review.bev_name}
-                            user_review={review.user_review}
-                            date_created={review.date_created}
-                            rating={review.rating}
-                        />
-                    )}
+                <h2>Your Posted Reviews:</h2>
+                {reviews.map(review =>
+                    <ReviewFormat
+                        key={review.id}
+                        id={review.id}
+                        bev_name={review.bev_name}
+                        user_review={review.user_review}
+                        date_created={review.date_created}
+                        rating={review.rating}
+                    />
+                )}
             </section>
         )
     }

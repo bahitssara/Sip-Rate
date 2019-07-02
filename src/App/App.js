@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage'
 import Header from '../Header/Header';
 import SignUpForm from '../SignUpForm/SignUpForm';
@@ -30,23 +30,23 @@ class App extends React.Component {
       })
     ])
       .then(([reviewRes]) => {
-        if(!reviewRes.ok) 
+        if (!reviewRes.ok)
           return reviewRes.json().then(e => Promise.reject(e))
 
-          return Promise.all([
-            reviewRes.json(),
-          ])
+        return Promise.all([
+          reviewRes.json(),
+        ])
+      })
+      .then(([reviews]) => {
+        this.setState({
+          reviews,
         })
-        .then(([reviews]) => {
-          this.setState({
-            reviews,
-          })
-        })
-  
-        .catch(error => {
-          console.error({error})
-        })
-      }
+      })
+
+      .catch(error => {
+        console.error({ error })
+      })
+  }
 
   handleDeleteReview = reviewId => {
     this.setState({
@@ -57,14 +57,14 @@ class App extends React.Component {
   handleEditReview = reviewId => {
     this.setState({
       reviews:
-      [...this.state.reviews, reviewId]
-    }) 
+        [...this.state.reviews, reviewId]
+    })
   }
 
   handleAddReview = review => {
     this.setState({
       reviews:
-      [...this.state.reviews, review]
+        [...this.state.reviews, review]
     })
   }
 
@@ -76,14 +76,14 @@ class App extends React.Component {
 
   setError = (error) => {
     console.error(error)
-    this.setState({ 
-      error 
+    this.setState({
+      error
     })
   }
 
 
 
-  render(){
+  render() {
     const contextValue = {
       user: this.state.user,
       beverages: this.state.beverages,
