@@ -18,8 +18,8 @@ I was inspired to create an app that allows wine and beer lovers to search their
 #### As a user I want to view existing reviews
 ![Profile Page](images/README/profile-page.png)
 
-### Final App
-#### <center>Mobile view</center>
+## <center><u>MVP</u></center>
+### <center>Mobile view</center>
 #### Home page
 ![Mobile home page](images/README/mobile-home-page.png)
 #### Registration page
@@ -33,7 +33,7 @@ I was inspired to create an app that allows wine and beer lovers to search their
 #### Profile/Your reviews
 ![Registration page](images/README/mobile-profile.png)
 
-#### <Center>Desktop view</center>
+## <Center>Desktop view</center>
 #### Home page
 ![Desktop home page](images/README/desktop-home-page.png)
 #### Registration page
