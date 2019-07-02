@@ -41,7 +41,7 @@ nav {
   color: #0E2944;
 }
 
-.fa-search-plus:hover {
+.fa-search:hover {
   color: #0E2944;
 }
 
@@ -69,7 +69,7 @@ header h1 {
     font-size: 25px;
   }
 
-  .fa-user-circle, .fa-sign-out-alt, .fa-search-plus {
+  .fa-user-circle, .fa-sign-out-alt, .fa-search {
     font-size: 35px;
     padding: 15px;
     text-shadow: 1px 2px 3px #0E2944;
@@ -107,11 +107,23 @@ header h1 {
     float: right;
   }
 
-  .fa-search-plus{
+  .fa-search{
     color: #0E2944;
     font-size: 35px;
     padding: 10px;
     float: left;
+  }
+
+  .fa-user-circle:hover {
+    color: #D27B81;
+  }
+  
+  .fa-sign-out-alt:hover {
+    color: #D27B81;
+  }
+  
+  .fa-search:hover {
+    color: #D27B81;
   }
 }
 
@@ -149,7 +161,7 @@ header h1 {
     float: right;
   }
 
-  .fa-search-plus{
+  .fa-search{
     font-size: 35px;
     padding: 10px;
     float: left;

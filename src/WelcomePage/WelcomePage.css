@@ -1,4 +1,5 @@
 .description {
+  border: 2px solid #0E2944;
   background-color: rgba(229,248,255,0.8);
   border-radius: 5px;
 }
@@ -22,6 +23,9 @@
 }
 
 @media screen and (min-width: 320px) {
+  .description{
+    margin-bottom: 10px;
+  }
   .description h2 {
     font-size: 30px;
   }

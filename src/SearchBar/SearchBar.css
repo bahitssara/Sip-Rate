@@ -25,7 +25,7 @@
 }
 
 .search-li-item {
-  border: 1px;
+  border: 2px solid #0E2944;
   border-radius: 3px;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -96,14 +96,15 @@
 }
 
 @media screen and (min-width: 1000px) { 
+  .search-results {
+    margin: 40px auto;
+    width: 65%;  
+  }
+
   .search-input-form input {
     width: 350px;
     height:45px;
     font-size: 23px;
-  }
-
-  .search-results {
-    margin: 100px;
   }
 
   .beverage-link {

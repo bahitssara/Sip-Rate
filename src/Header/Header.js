@@ -15,7 +15,7 @@ class Header extends React.Component {
                 <span title='Your Reviews'><i className="far fa-user-circle" /></span>           
                 </Link>
                 <Link to='/searchpage'>
-                <span title='Search'><i className="fas fa-search-plus" /></span>
+                <span title='Search'><i className="fas fa-search" /></span>
                 </Link>
                 <Link
                     className='logout-link'
