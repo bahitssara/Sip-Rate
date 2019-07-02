@@ -1,6 +1,7 @@
 # Sip & Rate
 Sip & Rate allows beer and wine lovers to search and rate some of their favorite or least favorite beverages. Can't remember how you felt about a certain drink? Problem solved! <br>
 <a href="https://github.com/bahitssara/sip-and-rate-api/" target="_blank">Sip & Rate API Repo</a><br>
+<a href="https://github.com/bahitssara/Sip-and-Rate" target="_blank">Sip & Rate Client Repo</a><br>
 <a href="https://sip-and-rate.saraamayberry.now.sh/" target="_blank">Live Sip & Rate Application</a>
 
 ## Motivation
