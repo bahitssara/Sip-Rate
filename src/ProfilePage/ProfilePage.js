@@ -14,6 +14,7 @@ class ProfilePage extends React.Component {
 
     static contextType = SipRateContext
 
+// Fetch reviews posted by the logged in user only
     componentDidMount() {
         const user = TokenService.getUserId()
         fetch(`${config.API_ENDPOINT}/myreviews/${user}`)

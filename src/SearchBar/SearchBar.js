@@ -25,6 +25,7 @@ class SearchBar extends React.Component {
     }
     static contextType = SipRateContext;
 
+//Get search query value
     updateState(ev) {
         ev.preventDefault()
         const value = this.input.value
@@ -34,7 +35,7 @@ class SearchBar extends React.Component {
         this.handleSearch(value)
     }
 
-
+// Search Snooth API using server endpoint & retrieve 3rd party API search results
     handleSearch(query) {
         const wineApi = `/beverages-api-data/${query}`;
         const str = config.API_ENDPOINT + `${wineApi}`;

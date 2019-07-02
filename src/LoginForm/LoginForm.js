@@ -28,6 +28,7 @@ class LoginForm extends React.Component {
 
     static contextType = SipRateContext;
 
+    // Handle user login and create auth token 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault();
         this.setState({ error: null });

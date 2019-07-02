@@ -8,6 +8,7 @@ class Header extends React.Component {
         TokenService.clearAuthToken()
     }
 
+// display link in header to profile, search, and logout links
     renderLogoutLink() {
         return (
             <div className='header-logged-in'>
@@ -26,7 +27,8 @@ class Header extends React.Component {
             </div>
         )
     }
-
+    
+// display link in header to register/sign up 
     renderLoginLink() {
         return (
             <div className='header-logged-out'>

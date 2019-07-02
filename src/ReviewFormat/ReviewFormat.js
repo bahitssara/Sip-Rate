@@ -11,7 +11,7 @@ import { format } from 'date-fns'
 class ReviewFormat extends React.Component {
     static contextType = SipRateContext
 
-
+//only load delete button for logged in users 
     renderDeleteButton() {
         if (TokenService.getAuthToken()) {
             return (

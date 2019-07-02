@@ -10,7 +10,8 @@ class HomePage extends React.Component {
         TokenService.clearAuthToken()
     }
 
-    renderLoggedInLink() {
+// Display all reviews path once user is logged in 
+    renderLoggedInPath() {
         return (
             <section className='header-logged-in-profile'>
                 <Reviews />
@@ -18,6 +19,7 @@ class HomePage extends React.Component {
         )
     }
 
+// Display login form and welcome page when user is logged out
     renderLoginForm() {
         return (
             <section className='login'>
@@ -30,7 +32,7 @@ class HomePage extends React.Component {
         return (
             <section className='home-screen'>
                 {TokenService.hasAuthToken()
-                    ? this.renderLoggedInLink()
+                    ? this.renderLoggedInPath()
                     : this.renderLoginForm()}
             </section>
         )

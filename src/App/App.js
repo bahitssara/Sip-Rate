@@ -20,6 +20,7 @@ class App extends React.Component {
     error: null
   };
 
+//Retrive already posted reviews from DB 
   componentDidMount() {
     Promise.all([
       fetch(config.API_ENDPOINT + '/reviews', {
